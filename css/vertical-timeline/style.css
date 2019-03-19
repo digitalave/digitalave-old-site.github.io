@@ -94,7 +94,7 @@ Main components
   top: 50%;
   margin-left: -25px;
   margin-top: -21px;
-  color: #011627;
+  color: #000000;
 }
 .cd-timeline-img {
   background: #e37c30;
@@ -191,7 +191,7 @@ Main components
   clear: both;
 }
 .wrapper.style1 h2.cd-header, .wrapper.style2 h2.cd-header, .wrapper.style3 h2.cd-header {
-  color: #011627;
+  color: #000000;
 }
 .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
   font-size: 13px;
