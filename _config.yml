@@ -1,0 +1,93 @@
+# Site settings
+title: DIgital Avenue
+email: digitalavenuelk@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  We build innovative solutions with Java and JavaScript. To support this mission, we have several Competence Centers. From within those Competence Centers, we provide coaching to the employee and expert advice towards our customer. In order to keep in sync with the latest technologies and the latest trends, we frequently visit conferences around the globe.
+metadata:
+    author: DImuthu Daundasekara
+    keywords: Linux, Linux Tutorials, Programming, Languages, Python, php, Database, Mysql
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://digitalave.github.io" # the base hostname & protocol for your site
+twitter_username: DigitalAvenue2
+github_username: digitalave
+facebook: digitalavenuelk
+
+# Plugins
+plugins: [jekyll-paginate, jekyll-feed, jekyll-redirect-from]
+whitelist: [jekyll-redirect-from]
+
+# Build settings
+markdown: kramdown
+
+sass:
+    sass_dir: _sass
+    style: compressed
+
+# Pagination
+paginate: 10
+
+collections:
+    # Needed for our job board
+    jobs:
+        output: true
+        permalink: /jobs/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: jobs
+    values:
+      layout: job
+
+keep_files: [img]
+
+# Image to show in the navigation bar - image must be a square (width = height)
+# Remove this parameter if you don't want an image in the navbar
+avatar: "/img/jworks/avatar-icon.png"
+
+############################################################
+# --- Footer options --- #
+
+# Change all these values or delete the ones you don't want.
+# Important: you must keep the "name" parameter, everything else you can remove
+author:
+  name: Dimuthu Daundasekara
+
+# Select your active Social Network Links.
+# Uncomment the links you want to show in the footer and add your information to each link.
+# You can reorder the items to define the link order.
+# If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
+social-network-links:
+  rss: true
+  email: "digitalavenuelk@gmail.com"
+  facebook: digitalavenuelk
+  github: digitalave
+  twitter: DigitalAvenue2
+#  reddit: yourname
+#  google-plus: +DeanAttali
+  linkedin: dimuthu-daundasekara-2b002271
+#  xing: yourname
+#  stackoverflow: "3943160/daattali"
+#  snapchat: deanat78
+  instagram: digitalave
+  youtube: user/digitalavenuelk
+#  spotify: yourname
+#  telephone: +14159998888
+#  steam: deanat78
+#  twitch: yourname
+#  yelp: yourname
+
+# Select which share links to show in posts
+share-links-active:
+  twitter: true
+  facebook: true
+  google: false
+  linkedin: true
+
+# --- Comments --- #
+
+# Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
+ disqus: ""
+
+# To use Facebook Comments, fill in a Facebook App ID
+# fb_comment_id: ""

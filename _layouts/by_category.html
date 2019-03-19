@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<section id="one" class="wrapper spotlight style1">
+    <div class="inner">
+        <div class="content">
+            <section class="features">
+
+                {% for post in page.posts reversed %}
+                <article  onclick="location.href = '{{ post.url}}'">
+                    <a href="{{post.url}}">
+                        <img src="{{post.image}}" alt="" class="article-image">
+                        <h3 class="major">{{post.title}}</h3>
+                    </a>
+
+                    <p>{{ post.date | date_to_string }} {{post.heading}}</p>
+                    <a href="{{post.url}}" class="special">Read more</a>
+                </article>
+                {% endfor %}
+
+            </section>
+        </div>
+    </div>
+</section>
+
+{% if page.other_categories != empty %}
+    <section id="two" class="wrapper alt style3">
+        <div class="inner">
+            <div class="content">
+                <h2 class="major">Other categories</h2>
+                <div class="category-list left">
+                    {% assign shown_categories = '' %}
+                    {% for cat in site.categories %} {% assign cat_ = cat[0] | downcase | replace:' ','-' %}
+                    {% assign shown_cats_array = shown_categories | split: ', ' %}
+                    {% unless shown_cats_array contains cat_ %}
+                    <a href="/categories/{{cat_ }}"><i class="fa fa-folder-o fa-fw"></i>{{cat[0]}}</a>
+                    {% assign shown_categories = shown_categories | append: ', ' | append: cat_ %}
+                    {% endunless %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}

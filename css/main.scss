@@ -1,0 +1,64 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+@import '../_sass/libs/vars';
+@import '../_sass/libs/functions';
+@import '../_sass/libs/mixins';
+@import '../_sass/libs/skel';
+
+/*
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+@include skel-breakpoints((
+        xlarge: '(max-width: 1680px)',
+        large: '(max-width: 1280px)',
+        medium: '(max-width: 980px)',
+        small: '(max-width: 736px)',
+        xsmall: '(max-width: 640px)',
+        xxsmall: '(max-width: 360px)'
+));
+
+@include skel-layout((
+        reset: 'full',
+        boxModel: 'border',
+        grid: (gutters: 1.75em),
+        breakpoints: (
+                small: (
+                        grid: (gutters: 1.25em)
+                )
+        )
+));
+
+// Base.
+
+@import '../_sass/base/page';
+@import '../_sass/base/typography';
+@import '../_sass/base/colors';
+
+// Component.
+
+@import '../_sass/components/section';
+@import '../_sass/components/form';
+@import '../_sass/components/box';
+@import '../_sass/components/icon';
+@import '../_sass/components/image';
+@import '../_sass/components/list';
+@import '../_sass/components/table';
+@import '../_sass/components/button';
+@import '../_sass/components/features';
+@import '../_sass/components/video';
+
+// Layout.
+
+@import '../_sass/layout/header';
+@import '../_sass/layout/menu';
+@import '../_sass/layout/banner';
+@import '../_sass/layout/wrapper';
+@import '../_sass/layout/footer';
+@import '../_sass/layout/about';
+@import '../_sass/layout/categories';
