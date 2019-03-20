@@ -3,7 +3,7 @@ layout: post
 authors: [dimuthu_daundasekara]
 title: 'INSTALL AND CONFIGURE LibreNMS SERVER ON CENTOS 7'
 image: images/librenms/LibreNMS.png
-tags: [Puppet]
+tags: [LibreNMS, Server Monitoring]
 category: Testing
 comments: true
 ---
@@ -574,6 +574,14 @@ $config[‘fping’] = “/usr/sbin/fping”;
 
 
 <img src="/images/librenms/image013.png" width="100%">
+
+
+**Little Request:**
+
+> I appreciate you guys taking the time in reading my post. Please check out my YouTube channel and please subscribe for more as it'll help me loads.
+
+
+<a href="https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ/featured?view_as=subscriber" target="_blank">https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ/featured?view_as=subscriber</a>
 
 
 
