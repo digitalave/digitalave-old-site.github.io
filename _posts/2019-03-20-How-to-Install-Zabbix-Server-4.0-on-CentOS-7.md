@@ -1,8 +1,8 @@
 ﻿---
 layout: post
 authors: [dimuthu_daundasekara]
-title: 'INSTALL AND CONFIGURE GrayLog2 SERVER ON CENTOS 7'
-image: /images/graylog_ins/graylog.png
+title: 'How to Install Zabbix Server 4.0 on CentOS 7'
+image: /images/zabbix/zabbix.png
 tags: [Zabbix, Server Monitoring, Log Monitoring]
 category: Spring
 comments: true
