@@ -3,7 +3,7 @@
 <html>
 <head>
     {% include header-default-meta.html %}
-    
+
     {% if page.layout == 'post' %}
         {% for author in page.authors %}
             {% capture authors %}{{ authors | default: ' -' }} {{author.first_name}} {{author.last_name}}{% endcapture %}
