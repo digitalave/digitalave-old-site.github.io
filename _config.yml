@@ -44,3 +44,6 @@ defaults:
       layout: "category"
 
 keep_files: [img]
+
+plugins:
+  - jekyll-seo-tag
