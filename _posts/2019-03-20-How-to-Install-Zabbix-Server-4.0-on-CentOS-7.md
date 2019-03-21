@@ -10,6 +10,8 @@ comments: true
 
 ## How to Install Zabbix Server 4.0 on CentOS 7
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2YnEIC11j6o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ### Introduction:
 
 Zabbix is an open source monitoring solution which allows you to real-time monitor millions of matrices collected from thousands of servers, virtual machines and network devices.
