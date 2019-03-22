@@ -2,13 +2,10 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'Install Ubuntu 18.04 on Oracle VirtualBox'
-image: /images/ubuntu/ubuntu.jpg
-tags: [Ubuntu, Debian, VirtualBox]
-category: Virtualbox
+image: images/ubuntu/Ubuntu.jpg
+tags: [LibreNMS, Server Monitoring]
+category: Testing
 comments: true
-categories: 
-    - "Operating Systems"
-    - "VirtualBox"
 ---
 
 ## Install and Configure Captive Portal with FreeRadius on pfSense
