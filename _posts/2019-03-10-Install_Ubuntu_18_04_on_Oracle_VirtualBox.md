@@ -1,7 +1,7 @@
 ---
 layout: post
 authors: [dimuthu_daundasekara]
-title: 'Install Ubuntu 18 04 on Oracle VirtualBox'
+title: 'Install Ubuntu 18.04 on Oracle VirtualBox'
 image: /images/ubuntu/ubuntu.jpg
 tags: [Ubuntu, Debian, VirtualBox]
 category: Virtualbox
