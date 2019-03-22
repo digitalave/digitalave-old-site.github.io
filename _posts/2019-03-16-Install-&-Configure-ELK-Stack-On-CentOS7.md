@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 authors: [dimuthu_daundasekara]
-title: 'Install and Configure Captive Portal with FreeRADIUS on pfSense'
+title: 'Install & Configure ELK Stack On CentOS7'
 image: /images/elk-stack/ELK.png
 tags: [pfSense, Firewall, Captive Portal, WIFI]
 category: Spring
