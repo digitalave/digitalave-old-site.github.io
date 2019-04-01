@@ -189,8 +189,10 @@ sudo yum -y install MariaDB-server MariaDB-client
 
 **Allow MariaDB/MySQL service through firewall.**
 
+```bash
 [root@zabbix ~]# firewall-cmd --permanent --add-service=mysql 
 [root@zabbix ~]# firewall-cmd –reload
+```
 
 **MariaDB Initial configuration:**
 
