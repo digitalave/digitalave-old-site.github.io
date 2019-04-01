@@ -154,24 +154,21 @@ Open web browser and access following web page. And you should see page like bel
 **Add MariaDB YUM repository to CentOS 7 server**
 
 
-```bash
-[root@zabbix ~]# vim /etc/yum.repos.d/MariaDB.repo 
+Genarete Repositery using this URL:
 
+https://downloads.mariadb.org/mariadb/repositories/#mirror=truenetwork&distro=CentOS&distro_release=centos7-amd64--centos7&version=10.3
+
+```bash
+# MariaDB 10.3 CentOS repository list - created 2019-04-01 15:07 UTC
+# http://downloads.mariadb.org/mariadb/repositories/
 [mariadb]
 name = MariaDB
-baseurl = http://yum.mariadb.org/10.4.3/centos7-amd64/
-gpgkey = https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
-gpgcheck = 1
+baseurl = http://yum.mariadb.org/10.3/centos7-amd64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
 ```
 
 Run Following Commands optinally...
-
-```bash
-Clean Yum Cache
-
-sudo yum makecache fast
-```
-
 
 **Install MariaDB**
 
