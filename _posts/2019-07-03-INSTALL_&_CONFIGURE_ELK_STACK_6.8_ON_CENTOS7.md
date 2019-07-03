@@ -10,6 +10,7 @@ comments: true
 
 # INSTALL & CONFIGURE ELK STACK 6.8 ON CENTOS7
 <img src="/images/elk-stack/ELK.png" width="100%">
+
 ## INTRODUCTION
 
 “ELK” is the acronym for the three open source projects call Elasticsearch, Logstash and Kibana. ELK stack made easier to analyze logs to system administrators. ELK stack collect logs from clients using Beats protocol
@@ -22,7 +23,9 @@ comments: true
 
 **Kibana** provides GUI for users visualize data with charts and graphs real-time. It is a window into the Elastic Stack. Provides data exploration, visualization and dashboarding.
 
-**Beats** is the platform for single-purpose data shippers. They install as lightweight agents and send data from numerous machines to Logstash of <img src="/images/elk-stack/image002.png" width="100%">
+**Beats** is the platform for single-purpose data shippers. They install as lightweight agents and send data from numerous machines to Logstash of 
+
+<img src="/images/elk-stack/image002.png" width="100%">
 
 <img src="/images/elk-stack/image003.png" width="100%">
 
@@ -536,24 +539,38 @@ OR
 (If nginx/apache proxy redirect with VHOST)
 `http://YOURIP.com:80`
 
+<img src="/images/elk-stack68/1.JPG" width="100%">
+
 Navigate To
 
 `Managemnt >> Kibana >> Create Index Pattern`
 
+<img src="/images/elk-stack68/6.JPG" width="100%">
 Now Navigate To 
 
 `Discover >> (Now You Search For Logs By Available Fields)`
+
+<img src="/images/elk-stack68/3.JPG" width="100%">
 
 ### Bottom Line: 
 
 ##### Hope you guys get some idea about how to install ELK Stack on CentOS7 step by step. And monitor system logs in a effective manner.
 
 ## In the next lesson I will teach you following points.
-1. How to Search Log Data and Narrow down them into your Requirement
-2. How To Save Search Data
-3. How To Visualize Data 
-4. How To Create Dashboards 
-5. How To Use Dev Tools 
-6. Log Rotate Effectively
-7. Optimize Logstash
+1. How to Install Beat Log Collectors on Client Systems.
+2. How to Search Log Data and Narrow down them into your Requirement
+3. How To Save Search Data
+4. How To Visualize Data
+5. How To Create Dashboards 
+6. How To Use Dev Tools 
+7. Log Rotate Effectively
+8. Optimize Logstash (Increase Index Search Performance & Lower Hardware Requirements) 
+
+**Video Tutorial on YouTube Will Be Available Soon.**
+
+<img src="/images/elk-stack68/5.JPG" width="100%">
+
+
+
+
 
