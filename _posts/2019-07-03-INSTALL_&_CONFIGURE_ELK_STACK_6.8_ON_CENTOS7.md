@@ -193,6 +193,7 @@ http.port: 9200
 
 
 `FIREWALL CONFIGURATION`
+
 Allow traffic through the TCP port 9200 in the firewall.
 
 ```bash
@@ -237,7 +238,7 @@ curl -XGET '192.168.10.10:9200/?pretty'
 
 In this step I will install Logstash version 6.8 and configure it as a central log server, receives logs from clients with Filebeat, then filter and transform the syslog data and move it into the stash (Elasticsearch)
 
-IMPORT PUBLIC GPG KEY TO THE ELK-STACK SERVER
+#### IMPORT PUBLIC GPG KEY TO THE ELK-STACK SERVER
 
 ```bash
 rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
@@ -288,7 +289,7 @@ openssl req -config /etc/pki/tls/openssl.cnf -x509 -days 3650 -batch -nodes -new
 
 Once ssl certificate is ready, this certificate should be copied to all the clients using scp command.
 
-CONFIGURE LOGSTASH
+### CONFIGURE LOGSTASH
 
 `vim /etc/logstash/logstash.yml`
 
@@ -519,3 +520,40 @@ systemctl restart nginx.service
 ```bash
 setsebool -P httpd_can_network_connect 1
 ```
+
+## STEP 07: Connect Kibana Frontend With Elasticsearch
+
+##### You need assign Kibana to which Elasticsearch indeces you want yo explore.
+
+Configure the Elasticsearch Indices what you want to access with Kibana.
+
+Open Web Browser and Point To...
+(Only via Kibana)
+`http://YOURIP.com:5601`
+
+OR
+
+(If nginx/apache proxy redirect with VHOST)
+`http://YOURIP.com:80`
+
+Navigate To
+
+`Managemnt >> Kibana >> Create Index Pattern`
+
+Now Navigate To 
+
+`Discover >> (Now You Search For Logs By Available Fields)`
+
+### Bottom Line: 
+
+##### Hope you guys get some idea about how to install ELK Stack on CentOS7 step by step. And monitor system logs in a effective manner.
+
+## In the next lesson I will teach you following points.
+1. How to Search Log Data and Narrow down them into your Requirement
+2. How To Save Search Data
+3. How To Visualize Data 
+4. How To Create Dashboards 
+5. How To Use Dev Tools 
+6. Log Rotate Effectively
+7. Optimize Logstash
+
