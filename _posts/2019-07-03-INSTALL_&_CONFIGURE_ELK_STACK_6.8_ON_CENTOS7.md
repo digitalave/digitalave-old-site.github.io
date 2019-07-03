@@ -9,7 +9,7 @@ comments: true
 ---
 
 # INSTALL & CONFIGURE ELK STACK 6.8 ON CENTOS7
-
+<img src="/images/elk-stack/ELK.png" width="100%">
 ## INTRODUCTION
 
 “ELK” is the acronym for the three open source projects call Elasticsearch, Logstash and Kibana. ELK stack made easier to analyze logs to system administrators. ELK stack collect logs from clients using Beats protocol
@@ -22,13 +22,9 @@ comments: true
 
 **Kibana** provides GUI for users visualize data with charts and graphs real-time. It is a window into the Elastic Stack. Provides data exploration, visualization and dashboarding.
 
-**Beats** is the platform for single-purpose data shippers. They install as lightweight agents and send data from numerous machines to Logstash of Elasticsearch.
+**Beats** is the platform for single-purpose data shippers. They install as lightweight agents and send data from numerous machines to Logstash of <img src="/images/elk-stack/image002.png" width="100%">
 
-**FileBeat/Auditbeat/Metrobeat** will send logs to Logstash, Logstash process incoming logs and stores into Elasticsearch, and then we can visualize through the Kibana web interface.
-
-### ELK STACK ARCHITECTURE
-
-<Images Goes Here>
+<img src="/images/elk-stack/image003.png" width="100%">
 
 Software Versions I have used in this tutorial.
 
