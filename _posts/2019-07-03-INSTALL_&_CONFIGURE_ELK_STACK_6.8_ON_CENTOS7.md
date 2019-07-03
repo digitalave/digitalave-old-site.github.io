@@ -550,7 +550,7 @@ Now Navigate To
 
 `Discover >> (Now You Search For Logs By Available Fields)`
 
-<img src="/images/elk-stack68/3.JPG" width="100%">
+<img src="/images/elk-stack68/3.jpg" width="100%">
 
 ### Bottom Line: 
 
@@ -568,8 +568,7 @@ Now Navigate To
 
 **Video Tutorial on YouTube Will Be Available Soon.**
 
-<img src="/images/elk-stack68/5.JPG" width="100%">
-
+<img src="/images/elk-stack68/5.jpg" width="100%">
 
 
 
