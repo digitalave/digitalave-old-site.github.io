@@ -12,14 +12,15 @@ comments: true
 ## ELK Stack Client Side Configuration Using Auditbeat
 
 ## Introduction:
-**Beats:-**
+
+#### Beats:-
 
 Beats is the platform for single purpose data shippers. 
 Bests send data to Logstash or Elasticsearch.
 
 All the Beats data ships to Elasticsearch or Logstash. And Visualize in Kibana.
 
-**Beat Types:-**
+#### Beat Types:-
 
 There are number of types of Beats available according to your requirement.
 
