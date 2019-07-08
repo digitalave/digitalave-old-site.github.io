@@ -8,7 +8,7 @@ category: Spring
 comments: true
 ---
 <img src="/images/elk-auditbeat/audit2.png" width="100%">
-
+<img src="/images/librenms/LibreNMS.png" width="100%">
 ## ELK Stack Client Side Configuration Using Auditbeat
 
 ## Introduction:
