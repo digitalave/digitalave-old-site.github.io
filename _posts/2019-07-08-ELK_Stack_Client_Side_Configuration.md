@@ -1,4 +1,15 @@
-﻿## ELK Stack Client Side Configuration
+﻿---
+layout: post
+authors: [dimuthu_daundasekara]
+title: 'ELK Stack Client Side Configuration Using Auditbeat'
+image: /images/elk-auditbeat/audit1.png
+tags: [pfSense, Firewall, OpenVPN, VPN]
+category: Spring
+comments: true
+---
+<img src="/images/elk-auditbeat/audit2.png" width="100%">
+
+## ELK Stack Client Side Configuration Using Auditbeat
 
 ## Introduction:
 **Beats:-**
@@ -35,7 +46,7 @@ So, You don't need to install of configure auditd packages manually.
 
 **7. Functionbeat**
 
-In this tutorial, I'm going to demonstrate Filebeat and Auditbeat only.
+In this tutorial, I'm going to demonstrate Auditbeat only.
 
 
 #### INSTALL & CONFIGURE AUDITBEAT 
