@@ -156,3 +156,6 @@ systemctl start auditbeat.service
 ```
 
 REF: <a href="https://www.elastic.co/downloads/beats/filebeat" target="_blank">https://www.elastic.co/downloads/beats/filebeat</a>
+
+**Note: You also can define any compatible auditd rules according to your requirement. You have to include audit rules under the " audit_rules: |" section of auditbeat.yml file or "/etc/auditbeat/audit.rules.d/" directory.**
+
