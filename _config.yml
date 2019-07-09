@@ -47,6 +47,6 @@ keep_files: [img]
 
 plugins:
   - jekyll-seo-tag
-
+  - jekyll-sitemap
 # Google Analytics
 google_analytics: UA-143539370-1
