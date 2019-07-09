@@ -1,5 +1,5 @@
 # Site settings
-title: Digital Avenue Tech Blog
+title: Digital Avenue IT Solutions
 email: digitalavenuelk@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   The digital Avenue sole purpose is providing a comprehensive knowledge in Howtos, Tutorials, Guides, Tech Comparison and much more in the fast moving tech world. Digital Avenue empowers you the vast knowledge in the Information Technology Industry. You can learn Software Development, System Engineering, Latest IT News, Career Development Ideas, Tech Products Comparisons and much more. 
@@ -47,3 +47,6 @@ keep_files: [img]
 
 plugins:
   - jekyll-seo-tag
+
+# Google Analytics
+google_analytics: UA-143539370-1
