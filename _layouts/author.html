@@ -15,7 +15,7 @@
 </script>
 
 <!--End of Google Analytics Data -->
-    
+
     {% include header-default-meta.html %}
 
     <title>{{ page.title }}, {{ page.author.title }} &mdash; {{ site.title }}</title>
@@ -34,6 +34,12 @@
     <meta property="og:image" content="https://digitalave.github.io/{{ '/img/author/' | append: page.author.avatar }}"/>
 
     {% include header-styles-scripts.html %}
+
+<!-- Google Analytic Data -->
+{% if site.google_analytics and jekyll.environment == 'production' %}
+{% include analytics.html %}
+{% endif %}
+<!-- End of Google Analytic Data -->
 </head>
 
 <body>

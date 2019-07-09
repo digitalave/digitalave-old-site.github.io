@@ -55,6 +55,13 @@
     {% endif %}
 
     {% include header-styles-scripts.html %}
+<!-- Google Analytic Data -->
+{% if site.google_analytics and jekyll.environment == 'production' %}
+{% include analytics.html %}
+{% endif %}
+<!-- End of Google Analytic Data -->
+
+<!-- Page Wrapper -->
 </head>
 
 <body>
