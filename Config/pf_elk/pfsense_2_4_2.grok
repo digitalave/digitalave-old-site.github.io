@@ -1,19 +1,3 @@
-# GROK Custom Patterns (add to patterns directory and reference in GROK filter for pfSense events):
-# GROK Patterns for pfSense 2.4.2 Logging Format
-#
-# Created 27 Jan 2015 by J. Pisano (Handles TCP, UDP, and ICMP log entries)
-# Edited 14 Feb 2015 by Elijah Paul elijah.paul@gmail.com
-# Edited 10 Mar 2015 by Bernd Zeimetz <bernd@bzed.de>
-# Edited 28 Oct 2017 by Brian Turek <brian.turek@gmail.com>
-# Edited 5 Jan 2017 by Andrew Wilson <andrew@3ilson.com>
-# Edited 30 Apr 2019 by Mike Eriksson <mike@swedishmike.org>
-# taken from https://gist.github.com/elijahpaul/3d80030ac3e8138848b5
-#
-# - Adjusted IPv4 to accept pfSense 2.4.2
-# - Adjusted IPv6 to accept pfSense 2.4.2
-#
-# TODO: Add/expand support for IPv6 messages.
-
 PFSENSE_LOG_ENTRY %{PFSENSE_LOG_DATA}%{PFSENSE_IP_SPECIFIC_DATA}%{PFSENSE_IP_DATA}%{PFSENSE_PROTOCOL_DATA}?
 PFSENSE_LOG_DATA %{INT:rule},%{INT:sub_rule}?,,%{INT:tracker},%{DATA:iface},%{WORD:reason},%{WORD:action},%{WORD:direction},
 PFSENSE_IP_DATA %{INT:length},%{IP:src_ip},%{IP:dest_ip},
@@ -54,6 +38,3 @@ PFSENSE_APP_LOGIN (%{DATA:pfsense_ACTION}) for user \'(%{DATA:pfsense_USER})\' f
 PFSENSE_APP_LOGOUT User (%{DATA:pfsense_ACTION}) for user \'(%{DATA:pfsense_USER})\' from: (%{GREEDYDATA:pfsense_REMOTE_IP})
 PFSENSE_APP_ERROR webConfigurator (%{DATA:pfsense_ACTION}) for \'(%{DATA:pfsense_USER})\' from (%{GREEDYDATA:pfsense_REMOTE_IP})
 PFSENSE_APP_GEN (%{GREEDYDATA:pfsense_ACTION})
-
-# SURICATA
-PFSENSE_SURICATA %{SPACE}\[%{NUMBER:ids_gen_id}:%{NUMBER:ids_sig_id}:%{NUMBER:ids_sig_rev}\]%{SPACE}%{GREEDYDATA:ids_desc}%{SPACE}\[Classification:%{SPACE}%{GREEDYDATA:ids_class}\]%{SPACE}\[Priority:%{SPACE}%{NUMBER:ids_pri}\]%{SPACE}{%{WORD:ids_proto}}%{SPACE}%{IP:ids_src_ip}:%{NUMBER:ids_src_port}%{SPACE}->%{SPACE}%{IP:ids_dest_ip}:%{NUMBER:ids_dest_port}
