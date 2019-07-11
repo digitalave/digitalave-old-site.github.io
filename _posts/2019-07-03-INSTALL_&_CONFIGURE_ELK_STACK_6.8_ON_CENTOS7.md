@@ -185,7 +185,8 @@ path.logs: /var/log/elasticsearch
 network.host: 192.168.10.10
 http.port: 9200
 ```
-<img src="/images/elk-stack68/elastic1.png" width="100%">
+
+<img src="/images/elk-stack68/elastic1.PNG" width="100%">
 
 `vim /etc/elasticsearch/jvm.options`
 
@@ -301,7 +302,8 @@ path.data: /var/lib/logstash
 http.host: "192.168.10.10"
 path.logs: /var/log/logstash
 ```
-<img src="/images/elk-stack68/logstash1.png" width="100%">
+
+<img src="/images/elk-stack68/logstash1.PNG" width="100%">
 
 #### JVM configuration
 
@@ -418,7 +420,7 @@ server.name: "elk"
 elasticsearch.hosts: ["http://192.168.10.10:9200"]
 ```
 
-<img src="/images/elk-stack68/kibana1.png" width="100%">
+<img src="/images/elk-stack68/kibana1.PNG" width="100%">
 
 #### FIREWALL CONFIGURATION
 Allow traffic through the TCP port 5044 in the firewall.
@@ -493,8 +495,8 @@ server {
     }
    }
 ```
-<img src="/images/elk-stack68/nginx_kibana.png" width="100%">
 
+<img src="/images/elk-stack68/nginx_kibana.PNG" width="100%">
 
 #### Check Nginx Configuration
 
