@@ -75,6 +75,7 @@ Auditbeat main configuration file (auditbeat.yml) resides in directory (/etc/aud
 
 Ref: <a href="https://www.elastic.co/guide/en/beats/auditbeat/6.0/auditbeat-configuration.html" target="_blank">https://www.elastic.co/guide/en/beats/auditbeat/6.0/auditbeat-configuration.html</a>
 
+
 `vim /etc/auditbeat/auditbeat.yml`
 
 
@@ -86,6 +87,8 @@ auditbeat.modules:
   # Load audit rules from separate files. Same format as audit.rules(7).
   audit_rule_files: [ '${path.config}/audit.rules.d/*.conf' ]
   audit_rules: |
+
+  # Add Custom Audit Rules According to Your Requirement
      -a always,exclude -F msgtype=AVC
      -a always,exclude -F msgtype=CWD
      -a always,exclude -F msgtype=EOE
@@ -98,6 +101,7 @@ auditbeat.modules:
      -a always,exit -F arch=b32 -F dir=/DATA -S rmdir -S unlink -S unlinkat -S rename -S renameat -F uid>=1000 -k delete_data_non_root
 
 - module: file_integrity
+  # Here You Can Add Custom Dorectories To Be Monitored
   paths:
   - /bin
   - /usr/bin
@@ -127,6 +131,8 @@ setup.template.settings:
 
 #============================== Kibana =====================================
 setup.kibana:
+
+# Comment If not using "elasticsearch output" section
 
 #----------------------------- Logstash output --------------------------------
 output.logstash:
