@@ -42,6 +42,11 @@ defaults:
       type: category
     values:
       layout: "category"
+---
+layout: default
+comments: true
+# other options
+---
 
 keep_files: [img]
 
@@ -50,3 +55,4 @@ plugins:
   - jekyll-sitemap
 # Google Analytics
 google_analytics: UA-143539370-1
+
