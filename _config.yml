@@ -42,11 +42,8 @@ defaults:
       type: category
     values:
       layout: "category"
----
-layout: default
-comments: true
-# other options
----
+  - comments: true
+
 
 keep_files: [img]
 
