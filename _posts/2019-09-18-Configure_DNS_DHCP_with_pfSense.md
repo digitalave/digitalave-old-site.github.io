@@ -20,6 +20,8 @@ Goto "System" tab and select "Genaral Setup" from the drop down menu.
 
 ![](/images/pfsense-dns-dhcp/screenshot_01.png)
 
+<img src="/images/elk-stack/ELK.png" width="100%">
+
 <img src="/images/pfsense-dns-dhcp/screenshot_01.png" width="100%">
 
 Change following fields as seen below.
