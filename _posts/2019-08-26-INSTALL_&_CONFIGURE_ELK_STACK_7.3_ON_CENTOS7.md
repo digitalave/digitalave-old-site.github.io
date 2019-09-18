@@ -389,19 +389,6 @@ input {
   }
 }
 
-### FILTER SECTION ###
-### This section parse the logs before sending them to Elasticsearch.
-filter {
-if [type] == "syslog" {
-    grok {
-      match => { "message" => "%{SYSLOGLINE}" }
-    }
-    date {
-match => [ "timestamp", "MMM  d HH:mm:ss", "MMM dd HH:mm:ss" ]
-}
-}
-}
-
 ### OUTPUT SECTION ###
 ### This section defines the storage for the logs to be stored.
 output {
@@ -442,7 +429,6 @@ sudo journalctl --unit elasticsearch
 rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 ```
 
-
 #### B: CREATE YUM REPO FILE FOR KIBANA
 
 `vim /etc/yum.repos.d/kibana.repo` 
@@ -458,13 +444,11 @@ autorefresh=1
 type=rpm-md
 ```
 
-
 #### C: INSTALL KIBANA YUM PACKAGES
 
 ```bash
 sudo yum install kibana
 ```
-
 
 #### D: CONFIGURE KIBANA
 
@@ -513,20 +497,17 @@ netstat -tulpena | grep 5601
 yum install epel-release
 ```
 
-
 #### B: INSTALL NGINX & HTTPD-TOOLS
 
 ```bash
 yum install nginx httpd-tools
 ```
 
-
 CREATE USERNAME “ADMIN” AND PASSWORD “PASSWORD” FOR KIBANA WEB INTERFACE
 
 ```bash
 htpasswd -c /etc/nginx/htpasswd.kibana admin
 ```
-
 
 #### C: CONFIGURE NGINX
 Edit the Nginx configuration file and remove the ‘server { }’ block, so we can add a new virtual host configuration.
@@ -568,7 +549,6 @@ server {
 ```bash
 nginx -t
 ```
-
 
 #### F: FIREWALL CONFIGURATION
 Allow traffic through the TCP port 80 in the firewall.
