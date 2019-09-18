@@ -14,9 +14,9 @@ Welcome to digital avenue. Hi Guys today i will goning to demonstrate how to ins
 
 #### STEP 01: GENARAL CONFIGURATION
 
-**Systemc > Genaral Setup**
+Systemc > Genaral Setup
 
-Goto "**System**" tab and select "**Genaral Setup**" from the drop down menu.
+Goto "System" tab and select "Genaral Setup" from the drop down menu.
 
 ![](/images/pfsense-dns-dhcp/screenshot_01.png)
 
@@ -24,11 +24,11 @@ Goto "**System**" tab and select "**Genaral Setup**" from the drop down menu.
 
 Change following fields as seen below.
 
-**Hostname** : Define a meaningfull hostname for pfSense.
+Hostname : Define a meaningfull hostname for pfSense.
 
-**Domain Name** : Define your domain name which pfsense router used.
+Domain Name : Define your domain name which pfsense router used.
 
-**DNS Server** : Define public authoritative DNS servers for user pfSense itself.
+DNS Server : Define public authoritative DNS servers for user pfSense itself.
 
 ![](/images/pfsense-dns-dhcp/screenshot_02.png)
 
@@ -36,7 +36,7 @@ Change following fields as seen below.
 
 Goto  Services tab and select DHCP Server from  the drop down menu.
 
-**Services > DHCP Server**
+Services > DHCP Server
 
 ![](/images/pfsense-dns-dhcp/screenshot_2.png)
 
@@ -58,31 +58,31 @@ Unbound is integrated into pfSense. Unbound is use as the DNS server.
 
 Go to  "Services" tab and select "DNS Resolver" from the drop down menu.
 
-**Services > DNS Resolver**
+Services > DNS Resolver
 
 ![](/images/pfsense-dns-dhcp/screenshot_6.png)
 
-**Enable DNS Resolver:** Enable/Disable DNS Resolver
+Enable DNS Resolver: Enable/Disable DNS Resolver
 
-**Network Interfaces:** Network interfaces which are listening from  DNS queries from  clients.
+Network Interfaces: Network interfaces which are listening from  DNS queries from  clients.
 
 ![](/images/pfsense-dns-dhcp/screenshot_7.png)
 
-**Outgoing Network Interfaces:** Specific interfaces which are passing outbound DNS queries to higer level DNS server such as Google DNS. Most cases WAN interfaces used.
+Outgoing Network Interfaces: Specific interfaces which are passing outbound DNS queries to higer level DNS server such as Google DNS. Most cases WAN interfaces used.
 
-**Enable DNSSEC Support:** DNSSEC provides added security to DNS queries which validate DNS queries.
+Enable DNSSEC Support: DNSSEC provides added security to DNS queries which validate DNS queries.
 
-**Enable Forwarding Mode:** Unbound DNS queries forwarding to upstream DNS server which are defined under  System > General 
+Enable Forwarding Mode: Unbound DNS queries forwarding to upstream DNS server which are defined under  System > General 
 
-**Register DHCP leases in the DNS Resolver:** DHCP static mappings can be registered in Unbound which enables the resolving of hostnames that have been assigned addresses by the DHCP server in pfSense
+Register DHCP leases in the DNS Resolver: DHCP static mappings can be registered in Unbound which enables the resolving of hostnames that have been assigned addresses by the DHCP server in pfSense
 
 ![](/images/pfsense-dns-dhcp/screenshot_8.png)
 
-**Host Overrides:** Allows creation of custom DNS responses/records to create new entries that do not exist in DNS outside the firewall, or to override DNS responses for other hosts.
+Host Overrides: Allows creation of custom DNS responses/records to create new entries that do not exist in DNS outside the firewall, or to override DNS responses for other hosts.
 
 ![](/images/pfsense-dns-dhcp/screenshot_9.png)
 
-**Domain Override:** For domains that should be queried by a specific remote server.
+Domain Override: For domains that should be queried by a specific remote server.
 At this point I want to redirect all DNS quest for  .youtube.com and .facebook.com redirect to localhost/127.0.0.1 itself.
 
 ![](/images/pfsense-dns-dhcp/screenshot_10.png)
