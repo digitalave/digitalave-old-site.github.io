@@ -18,7 +18,7 @@ Systemc > Genaral Setup
 
 Goto "System" tab and select "Genaral Setup" from the drop down menu.
 
-<img src="/images/pfsense-dns-dhcp/screenshot_01.png" width="100%">
+<img src="images/pfsense-dns-dhcp/screenshot_01.png" width="100%">
 
 Change following fields as seen below.
 
