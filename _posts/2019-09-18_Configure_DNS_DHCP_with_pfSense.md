@@ -1,17 +1,12 @@
-
-
-https://digitalave.github.io/images/pfsense-dns-dhcp/Screenshot_1.png
-https://digitalave.github.io/images/pfsense-dns-dhcp/Screenshot_2.png
-https://digitalave.github.io/images/pfsense-dns-dhcp/Screenshot_3.png
-https://digitalave.github.io/images/pfsense-dns-dhcp/Screenshot_4.png
-https://digitalave.github.io/images/pfsense-dns-dhcp/Screenshot_5.png
-https://digitalave.github.io/images/pfsense-dns-dhcp/Screenshot_6.png
-https://digitalave.github.io/images/pfsense-dns-dhcp/Screenshot_7.png
-https://digitalave.github.io/images/pfsense-dns-dhcp/Screenshot_8.png
-https://digitalave.github.io/images/pfsense-dns-dhcp/Screenshot_9.png
-https://digitalave.github.io/images/pfsense-dns-dhcp/Screenshot_10.png
-https://digitalave.github.io/images/pfsense-dns-dhcp/Screenshot_11.png
-https://digitalave.github.io/images/pfsense-dns-dhcp/Screenshot_12.png
+---
+layout: post
+authors: [dimuthu_daundasekara]
+title: 'Configure Local DHCP Server & DNS Resolver on pfSense '
+image: /images/elk-stack/ELK.png
+tags: [pfsense, DNS, DHCP, Firewall]
+category: Spring
+comments: true
+---
 
 ### CONFIGURE DHCP SERVER & DNS RESOLVER ON PFSENSE
 
