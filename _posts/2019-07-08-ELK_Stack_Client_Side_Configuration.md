@@ -7,6 +7,9 @@ tags: [pfSense, Firewall, OpenVPN, VPN]
 category: Spring
 comments: true
 ---
+
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/watch?v=rWqUyGP_NwE&t' frameborder='0' allowfullscreen></iframe></div>
+
 <img src="/images/elk-auditbeat/audit1.png" width="100%">
 
 ## ELK Stack Client Side Configuration Using Auditbeat
