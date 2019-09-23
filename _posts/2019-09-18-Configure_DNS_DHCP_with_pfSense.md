@@ -10,7 +10,7 @@ comments: true
 
 ### CONFIGURE DHCP SERVER & DNS RESOLVER ON PFSENSE
 
-Welcome to digital avenue. Hi Guys today i will goning to demonstrate how to install anbd configure dhcp server and dns reslover on pfsense 2.4.
+Welcome to digital avenue. Hi Guys today I'm goning to demonstrate how to install anbd configure dhcp server and dns reslover on pfsense 2.4.
 
 #### STEP 01: GENARAL CONFIGURATION
 
