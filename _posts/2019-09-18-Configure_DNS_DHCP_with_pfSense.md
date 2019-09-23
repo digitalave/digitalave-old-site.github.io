@@ -7,7 +7,7 @@ tags: [pfsense, DNS, DHCP, Firewall]
 category: Spring
 comments: true
 ---
-
+<img src="/images/pfsense-dns-dhcp/pf-DNS&DHCP.png" width="100%">
 ### CONFIGURE DHCP SERVER & DNS RESOLVER ON PFSENSE
 
 Welcome to digital avenue. Hi Guys today I'm goning to demonstrate how to install anbd configure dhcp server and dns reslover on pfsense 2.4.
