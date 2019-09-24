@@ -8,7 +8,6 @@ category: Spring
 comments: true
 ---
 
-
 ## How To Setup an OpenVPN on pfSense with Dual-WAN Interfaces as Fail-over 
 
 #### Introduction:
