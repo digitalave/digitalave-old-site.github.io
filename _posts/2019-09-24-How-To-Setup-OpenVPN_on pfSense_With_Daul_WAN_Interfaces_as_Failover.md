@@ -32,7 +32,7 @@ Now head over to "**VPN**" tab and select "**OpenVPN**" from  the drop  down.
 
 Click & open  "**Wizard**"
 
-<img src="/images/dual_wan_pf_vpn/vpn(2).png" width="100%">
+<img src="/images/dual_wan_pf_vpn/vpn (2).png" width="100%">
 
 1. Select "**Local User Access**" as the Authentication Backed Type.
 
