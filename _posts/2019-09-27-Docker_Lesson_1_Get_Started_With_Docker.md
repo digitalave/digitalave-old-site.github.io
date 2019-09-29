@@ -1,23 +1,29 @@
 ---
 layout: post
 authors: [dimuthu_daundasekara]
-title: 'Lession 01 : Install Docker on CentOS8 /Redhat RHEL8'
+title: 'Lession 01 : Install Docker on CentOS7 /Redhat RHEL7'
 image: /images/Docker-Installation/docker.jpg
-tags: [Docker, Containers,MicroServices, CentOS 8,RHEL 8]
+tags: [Docker, Containers,MicroServices, CentOS 7,RHEL 7]
 category: Spring
 comments: true
 ---
-### Install Docker on CentOS8 / Redhat RHEL8
+### Install Docker on CentOS7 / Redhat RHEL7
 
 ##### Introduction
 
-In this very first, tutorial I'm going to demonstrate pre & post installation steps for Docker. In here I'm show you how to install Docker on Windows & CentOS 8 /RHEL 8 step by step.
+This is the very first session of Docker lesson series. In this tutorial I'm going to demonstrate how to install Docker on CentOS7 and RHEL7.
 
-Before the installation, We should know about little bit about what the Docker is ?
 
-This is the first session of the Docker lesson series. In this tutorial I'm going to teach you about following...
 
-1. What Is Docker ?
+| Catagory | Requirements, Software Versions Used |
+|----------|--------------------------------------|
+| OS       | CentOS 7                          |
+| Software | Docker Version 18                 |
+
+
+Before the installation, We should know about little bit about Docker. 
+
+1. What is Docker ?
 
 2. Docker Editions ?
 
@@ -25,16 +31,14 @@ This is the first session of the Docker lesson series. In this tutorial I'm goin
 
 4. Docker Installation on CentOS 8
 
-5. Docker Installation on Windows 10
+##### What Docker ?
 
-##### What is Docker ?
+Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package.
 
 * Docker is a set of platform-as-a-service.
 
-
 * That use OS-level virtualization to deliver software in packages.
 * They are called containers.
-
 
 * These containers are isolated from one another and bundle their own software, libraries and configuration files
 * They can communicate with each other.
@@ -48,24 +52,17 @@ This is the first session of the Docker lesson series. In this tutorial I'm goin
 
 **Docker is available in three Editions:**
 
-* Docker Engine - Community
-
-* Docker Engine - Enterprise
-
-* Docker Enterprise
-
 <img src="/images/Docker-Installation/1.jpg" width="100%">
 
-
-**Docker Engine - Community Edition:** 
+1. Docker Engine - Community Edition:** 
 
 Good starting point for individual developers, small teams and those who are learning docker.
 
-**Docker Engine - Enterprise Edition:**
+2. Docker Engine - Enterprise Edition:**
 
 Designed for enterprise level development of docker containers with better enhanced security.
 
-**Docker Enterprise:**
+3. Docker Enterprise:**
 
 Designed for enterprise development and IT teams who build, ship, and run business critical apps in production.
 
@@ -88,7 +85,7 @@ A Single Container Includes:
 <img src="/images/Docker-Installation/2.jpg" width="100%">
 
 
-##### Install Docker Engine - Community For CentOS 8
+##### Install Docker Engine - Community For CentOS 7 / RHEL 7
 
 **OS requirements:**
 
@@ -97,7 +94,6 @@ A Single Container Includes:
 The `overlay2` storage driver is recommended.
 
 ### Install From Docker yum repository
-
 
 **STEP 01: SETUP THE DOCKER YUM REPOSITORY**
 
@@ -120,21 +116,40 @@ Install docker package
 sudo yum install docker-ce docker-ce-cli containerd.io
 ```
 
-
-**STEP 02: Start Docker Service** 
+**STEP 02: Start & Enable Docker Daemon** 
+Once docker-ce installed on the system, we must start & enable the docker daemon. So, that it will be launched automatically on system boots.
 
 ```bash
 sudo systemctl start docker
+```
+
+```bash
+sudo systemctl enable --now docker
 ```
 
 **STEP 03: Verify Installation**
 Now check whether docker has been installed correctly.
 
 ```bash
+systemctl is-active docker
+```
+
+```bash
 sudo docker run hello-world
 ```
 
 which automatically start to download basic "hello-world" images from Docker Hub. 
+
+**STEP 04: Testing Docker**
+
+Now, I'm going to build an image and run a container. In this case I'm going to use official "httpd". 
+
+```bash
+sudo docker run --rm --name=linuxconfig-test -p 80:80 httpd
+```
+
+Since the httpd image does not exists locally it will be automatically fetched and built. Finally, a container based on it will be launched in the foreground (it will be automatically removed when stopped). If our firewall is configured to allow access to port 80, we should be able to see the It works! message when we reach our machine ip via browser.
+
 
 ### Manage Docker as a non-root user:
 
