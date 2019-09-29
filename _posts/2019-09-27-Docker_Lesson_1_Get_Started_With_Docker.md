@@ -268,10 +268,6 @@ Hope this helps for those who are looking for a starting point to learn Docker. 
 You can keep in touch  with the future tutorials by  Subscribing me on Youtube.
 
 
-
-![Subscribe Here](/images/Docker-Installation/sub.gif)
-
-
-[<img src="/images/Docker-Installation/sub.gif">](http://google.com.au/)
+[<img src="/images/Docker-Installation/sub.gif"> target="_blank](http://google.com.au/)
 
 [![Foo](/images/Docker-Installation/sub.gif)](http://google.com.au/)
