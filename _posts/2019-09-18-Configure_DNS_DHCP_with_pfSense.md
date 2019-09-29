@@ -92,3 +92,8 @@ At this point I want to redirect all DNS quest for  .youtube.com and .facebook.c
 #### STEP 02: Verifing DNS Queries.
 
 <img src="/images/pfsense-dns-dhcp/Screenshot_12.png" width="100%">
+
+
+[<img src="/images/Docker-Installation/sub.gif">](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ/videos?view_as=subscriber) 
+
+[![Foo](/images/Docker-Installation/sub.gif)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ/videos?view_as=subscriber)
