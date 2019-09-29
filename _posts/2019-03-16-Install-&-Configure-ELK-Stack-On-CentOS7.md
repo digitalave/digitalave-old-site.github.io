@@ -547,7 +547,9 @@ Now ELK Initial Steps are completed. We'll discuss regarding Log Monitoring in a
 
 
 
+[<img src="/images/Docker-Installation/sub.gif">](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1) 
 
+[![Foo](/images/Docker-Installation/sub.gif)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1)
 
 
 
