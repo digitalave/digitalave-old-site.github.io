@@ -269,10 +269,9 @@ You can keep in touch  with the future tutorials by  Subscribing me on Youtube.
 
 
 
-
-
-
-
-<img src="/images/Docker-Installation/sub.gif" width="100%">
-
 ![Subscribe Here](/images/Docker-Installation/sub.gif)
+
+
+[<img src="/images/Docker-Installation/sub.gif">](http://google.com.au/)
+
+[![Foo](/images/Docker-Installation/sub.gif)](http://google.com.au/)
