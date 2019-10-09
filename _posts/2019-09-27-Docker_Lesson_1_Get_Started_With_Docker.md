@@ -11,7 +11,7 @@ comments: true
 
 ##### Introduction
 
-This is the very first session of Docker lesson series. In this tutorial I'm going to demonstrate how to install Docker on CentOS7 and RHEL7.
+This is the very first session of Docker lesson series. In this tutorial I'm going to demonstrate how to install Docker on CentOS7 with the little bit of explanation about Docker.
 
 
 
@@ -21,19 +21,13 @@ This is the very first session of Docker lesson series. In this tutorial I'm goi
 | Software | Docker Version 18                 |
 
 
-Before the installation, We should know about little bit about Docker. 
-
-1. What is Docker ?
-
-2. Docker Editions ?
-
-3. What is Docker Containers ?
-
-4. Docker Installation on CentOS 8
+Before the installation, We should know about little bit of Docker. 
 
 ##### What Docker ?
 
 Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package.
+
+* Docker is Opensource.
 
 * Docker is a set of platform-as-a-service.
 
@@ -54,15 +48,15 @@ Docker is a tool designed to make it easier to create, deploy, and run applicati
 
 <img src="/images/Docker-Installation/1.jpg" width="100%">
 
-1. Docker Engine - Community Edition:** 
+1. Docker Engine - Community Edition (CE):
 
 Good starting point for individual developers, small teams and those who are learning docker.
 
-2. Docker Engine - Enterprise Edition:**
+2. Docker Engine - Enterprise Edition (EE):
 
 Designed for enterprise level development of docker containers with better enhanced security.
 
-3. Docker Enterprise:**
+3. Docker Enterprise:
 
 Designed for enterprise development and IT teams who build, ship, and run business critical apps in production.
 
@@ -97,6 +91,11 @@ The `overlay2` storage driver is recommended.
 
 **STEP 01: SETUP THE DOCKER YUM REPOSITORY**
 
+
+```bash
+yum update -y
+```
+
 Install required packages For YUM repository management.
 
 ```bash
@@ -111,6 +110,8 @@ sudo yum-config-manager  --add-repo https://download.docker.com/linux/centos/doc
 ```
 
 Install docker package
+
+This will install Docker latest version.
 
 ```bash
 sudo yum install docker-ce docker-ce-cli containerd.io
@@ -182,6 +183,10 @@ docker run hello-world
 
 ```bash
 sudo systemctl enable docker
+```
+
+```bash
+docker version
 ```
 
 ### Install Docker on Ubuntu/Debian 
