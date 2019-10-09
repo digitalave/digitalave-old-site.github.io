@@ -283,3 +283,7 @@ systemctl restart nrpe.service
 <img src="/images/nagios-install-centos7/3.png" width="100%">
 
 <img src="/images/nagios-install-centos7/4.png" width="100%">
+
+<img src="/images/nagios-install-centos7/5.png" width="100%">
+
+<img src="/images/nagios-install-centos7/6.png" width="100%">
