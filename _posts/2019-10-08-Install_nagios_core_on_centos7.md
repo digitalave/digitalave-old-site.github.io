@@ -1,3 +1,16 @@
+---
+layout: post
+authors: [dimuthu_daundasekara]
+title: 'How to Install Nagios Core 4.4 Server on CentOS/RHEL 7'
+image: /images/nagios-install-centos7/nagios.jpg
+tags: [Nagios,Server Monitoring]
+category: Spring
+comments: true
+---
+
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/04_eZkoMviM' frameborder='0' allowfullscreen></iframe></div>
+
+
 # How to Install Nagios Core 4.4 Server on CentOS/RHEL 7
 
 ### Introduction:
@@ -83,7 +96,7 @@ cd /nagios/nagioscore-nagios-4.4.5/
 ./configure
 ```
 
-<1.png>
+<img src="/images/nagios-install-centos7/1.png" width="100%">
 
 ##### C. Compile the Main Program & CGIs.
 
@@ -91,7 +104,7 @@ cd /nagios/nagioscore-nagios-4.4.5/
 make all
 ```
 
-<2.png>
+<img src="/images/nagios-install-centos7/2.png" width="100%">
 
 ##### D. Create Nagios User & Group.
 
@@ -266,3 +279,7 @@ F. Enable NRPE Service To Start at Boot
 systemctl enable nrpe.service
 systemctl restart nrpe.service
 ```
+
+<img src="/images/nagios-install-centos7/3.png" width="100%">
+
+<img src="/images/nagios-install-centos7/4.png" width="100%">
