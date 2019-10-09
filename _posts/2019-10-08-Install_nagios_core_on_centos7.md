@@ -1,7 +1,7 @@
 ---
 layout: post
 authors: [dimuthu_daundasekara]
-title: 'How to Install Nagios Core 4.4 Server on CentOS/RHEL 7'
+title: 'How to Install Nagios Core 4.4 Server on CentOS7/RHEL 7'
 image: /images/nagios-install-centos7/nagios.jpg
 tags: [Nagios,Server Monitoring]
 category: Spring
