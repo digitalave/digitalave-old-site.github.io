@@ -1,117 +1,86 @@
+## How to Add Linux Host to Nagios Monitoring Server Using NRPE Plugin
 
-# How to Add Linux Host to Nagios Monitoring Server Using NRPE Plugin
+In this video, I will show you how to add remote Linux client host and it's services to Nagios Monitoring Server using NRPE agent.
 
-## On Client Host 
+In my previous video, I demonstrated how to install Nagios server on Centos7. I hope you already have installed Nagios server. 
 
-#### STEP 01: How To Install NRPE v3 From YUM Repository
+The NRPE is stands for Nagios Remote Plugin Executor. As its says by the name, NRPE allows Nagios server to discover client host resources and their services through the network.
 
-A. Install Prerequisites
+### REMOTE CLEINT SIDE CONFIGURATION: 
+
+##### A. Install Prerequisites
+We need to install required libraries.
 
 ```bash
-yum install -y gcc glibc glibc-common openssl openssl-devel perl wget
+[root@cl1 ~]# yum install -y gcc glibc glibc-common openssl openssl-devel perl wget
 ```
 
-B. Install Latest EPEL Repository And System Updates
 
+##### B. Install Latest EPEL Repository And Update The System.
 Install Latest EPEL YUM Repository
 
 ```bash
-yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+[root@cl1 ~]# wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+[root@cl1 ~]# rpm -Uvh epel-release-latest-7.noarch.rpm
+
+[root@cl1 ~]# yum -y update
 ```
 
-```bash
-yum -y update
-```
-
-C. Install (NRPE v3) Nagios Remote Plugin Executor
- 
-```bash
-yum -y install nrpe
-```
-
-D. Update NRPE Configuration File
-
-Add the private IP address of the Nagios server 
-
-allowed_hosts=<Nagios_Server_IP>
+##### C. Install (NRPE v3) Nagios Remote Plugin Executor
 
 ```bash
-vim /etc/nagios/nrpe.cfg
+[root@cl1 ~]# yum -y install nrpe
 ```
 
 
+##### D. Update NRPE Configuration File
+
+Add the private IP address of the Nagios server
+
+**allowed_hosts=<Nagios_Server_IP>**
+
 ```bash
+[root@cl1 ~]# vim /etc/nagios/nrpe.cfg
 allowed_hosts=127.0.0.1,172.25.10.50
 ```
 
-Define here your commands that you want to execute on remote host.
-Comment/UnComment According To Your Requirements
 
-```bash
-command[check_users]=/usr/lib64/nagios/plugins/check_users -w 5 -c 10
-command[check_load]=/usr/lib64/nagios/plugins/check_load -r -w .15,.10,.05 -c .30,.25,.20
-command[check_hda1]=/usr/lib64/nagios/plugins/check_disk -w 20% -c 10% -p /dev/hda1
-command[check_zombie_procs]=/usr/lib64/nagios/plugins/check_procs -w 5 -c 10 -s Z
-command[check_total_procs]=/usr/lib64/nagios/plugins/check_procs -w 150 -c 200
-```
+##### E. Allow NRPE service Port Through the Firewall 
 
-
-D. Allow NRPE service Port Through the Firewall
 Allow TCP port 5666 through the firewall to be able to listening through the TCP port 5666
 
-
 ```bash
-[root@nagios /]# firewall-cmd --permanent --add-port=5666/tcp
-[root@nagios /]# firewall-cmd --reload
+[root@cl1 ~]# firewall-cmd --permanent --add-port=5666/tcp
+[root@cl1 ~]# firewall-cmd --reload
 ```
 
-F. Enable NRPE Service To Start at Boot
+##### F. Enable NRPE Service To Start at Boot
 
 ```bash
-systemctl enable nrpe.service
-systemctl restart nrpe.service
-systemctl status nrpe.service
+[root@cl1 ~]# systemctl enable nrpe.service
+[root@cl1 ~]# systemctl restart nrpe.service
+[root@cl1 ~]# systemctl status -l  nrpe.service
 ```
 
-# STEP 02: Installing Nagios Plugins From YUM Repository
+### NAGIOS SERVER SIDE CONFIGURATION:
 
-A. Install Prerequisites
+##### A. Create Config a Directory
+
+Create a directory that will store the configuration files for each server that you will need to monitor.
 
 ```bash
-yum install -y gcc glibc glibc-common make gettext automake autoconf wget openssl-devel net-snmp net-snmp-utils epel-release
-yum install -y perl-Net-SNMP
+[root@nagios ~]# sudo mkdir /usr/local/nagios/etc/hosts
 ```
-B. Install Nagios Plugins
+##### B. Create Host Definition File
+
+Create a new configuration file for each of the remote hosts that we want to monitor.
+
+In this case I'm going to put all the host and service definitions into a single file.
+
 
 ```bash
-yum -y install nagios-plugins-all
-```
-
-C. Copy plugins if not available in the directory.
- 
-
-```bash
-cp /usr/lib64/nagios/plugins/check_* /usr/local/nagios/libexec/
-```
-
-D. Restart Nagios, Apache and NRPE Servers
-
-```bash
-systemctl restart nagios httpd nrpe
-```
-# STEP 03: Define New Hosts & Services 
-## On Nagios Server
-
-Create the directory that will store the configuration file for each server that we will monitor.
-
-```bash
-sudo mkdir /usr/local/nagios/etc/servers
-```
-
-Create a new configuration file for each of the remote hosts that we want to monitor 
-
-```bash
-vim /usr/local/nagios/etc/servers/cl1.cfg
+[root@nagios ~]# vim /usr/local/nagios/etc/hosts/cl1.cfg
 ```
 
 ```bash
@@ -122,6 +91,16 @@ define host {
         alias                        Ubuntu Host
         address                      172.25.10.100
         register                     1
+}
+
+define service {
+      host_name                       cl1
+      service_description             PING
+      check_command                   check_ping!100.0,20%!500.0,60%
+      max_check_attempts              2
+      check_interval                  2
+      retry_interval                  2
+      check_period                    24x7
 }
 
 define service {
@@ -203,75 +182,7 @@ define service {
       notifications_enabled           1
       register                        1
 }
-```
 
-```bash
-vim /usr/local/nagios/etc/nagios.cfg
-```
-
-```bash
-# Definitions for monitoring the local (Linux) host
-cfg_file=/usr/local/nagios/etc/servers/cl1.cfg
-```
-
-Now restart Nagios server to reflect the configuration changes.
-
-```bash
-systemctl restart nagios.service
-```
-
-# STEP 04: Add New Service 
-
-#### On Nagios monitoring server:
-
-A. Edit the file commands.cfg and add the lines below.
-
-```bash
-vim /usr/local/nagios/etc/objects/commands.cfg
-```
-
-```bash
-#'check_dns' command definition
-define command {
-        command_name    check_dns
-        command_line       $USER1$/check_dns -H $HOSTADDRESS$ -s $ARG1$ 
-}
-```
-
-OR
-
-```bash
-#'check_dns' command definition
-define command {
-        command_name    check_dns
-        command_line    $USER1$/check_dns -H digitalave.github.io -s 8.8.8.8 -t 15 | sed  -e "s/returns.*//g" 
-}
-
-```
-
-$ARG1$ is the argument you will parse into in the configuration
-$HOSTADDRESS$ is your host on Nagios monitoring.
-
-
-B. Verify NRPE Daemon
-
-> /usr/local/nagios/libexec/check_nrpe -H <remote_linux_ip_address>
-
-OR
-
-> /usr/local/nagios/libexec/check_dns -H digitalave.github.io -s 8.8.8.8 -t 15 | sed  -e "s/returns.*//g" 
-
-C. Edit Host & Service  Configuration File for CL1 Host
-
-Next, put the line below into service check configuration file
-
-```bash
-vim /usr/local/nagios/etc/servers/cl1.cfg
-```
-
-
-
-```bash
 define service {
       host_name                       cl1
       service_description             DNS
@@ -289,40 +200,74 @@ define service {
 }
 ```
 
-D. Verify Nagios Configs and Check For Error
+##### C. Modify Nagios Main Config
+
+Then, Add "cl1.cfg" config file path into Nagios main configuration file.
 
 ```bash
-/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+[root@nagios ~]# vim /usr/local/nagios/etc/nagios.cfg
+```
+
+```bash
+# Definitions for monitoring the local (Linux) host
+cfg_file=/usr/local/nagios/etc/hosts/cl1.cfg
+```
+
+##### D. Define New Commands
+
+Edit the file commands.cfg and add the lines below.
+
+Add this command definition config into the bottom of the "commands.cfg" file.
+
+In this case, I'm going to add "check_dns" command into the "commands.cfg" as a new service check command.
+
+```bash
+[root@nagios ~]# vim /usr/local/nagios/etc/objects/commands.cfg
+```
+
+Here, You can define your own commands that you want to  execute on the remote host.
+
+You can add and modify new command definitions by editing this section.
+
+```bash
+#'check_dns' command definition
+define command {
+        command_name    check_dns
+        command_line       $USER1$/check_dns -H $HOSTADDRESS$ -s $ARG1$ 
+}
 ```
 
 
-Restart your Nagios service now
+OR
 
 ```bash
-systemctl restart nagios
-```
-
-#### ON Client:Remote Host (the machine you want to monitor)
-
-E. Configure NRPE Agent Configuration File
-
-```bash
-vim /etc/nagios/nrpe.cfg
+#'check_dns' command definition
+define command {
+        command_name    check_dns
+        command_line    $USER1$/check_dns -H digitalave.github.io -s 8.8.8.8 -t 15 | sed  -e "s/returns.*//g" 
+}
 ```
 
 
-Uncomment This Line
+##### E. Verify NRPE Daemon
+
+Finally verify the configuration that we made.
 
 ```bash
-command[check_dns]=/usr/lib64/nagios/plugins/check_disk $ARG1$
+/usr/local/nagios/libexec/check_nrpe -H <remote_linux_ip_address>
 ```
 
-
-Restart NRPE service
+##### F. Verify Nagios Configs and Check For Error
 
 ```bash
-systemctl restart  nrpe
+[root@nagios ~]# /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
 ```
 
-F. Log Into Nagios Web Console
+Now restart Nagios server to reflect the configuration changes.
+
+```bash
+[root@nagios ~]# systemctl restart nagios httpd
+```
+
+##### G. Log Into Nagios Web Console
 
