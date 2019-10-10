@@ -1,3 +1,13 @@
+---
+layout: post
+authors: [dimuthu_daundasekara]
+title: 'How to Add Linux Host to Nagios Monitoring Server Using NRPE Plugin'
+image: /images/add-linux-to-nagios/linux2nagios.jpg
+tags: [Nagios,Server Monitoring]
+category: Spring
+comments: true
+---
+
 ## How to Add Linux Host to Nagios Monitoring Server Using NRPE Plugin
 
 In this video, I will show you how to add remote Linux client host and it's services to Nagios Monitoring Server using NRPE agent.
