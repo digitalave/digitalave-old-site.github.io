@@ -8,6 +8,8 @@ category: Spring
 comments: true
 ---
 
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/sHcWGKwRzEs/?&autoplay=1' frameborder='0' allowfullscreen></iframe></div>
+
 ## How to Add Linux Host to Nagios Monitoring Server Using NRPE Plugin
 
 In this video, I will show you how to add remote Linux client host and it's services to Nagios Monitoring Server using NRPE agent.
@@ -24,7 +26,6 @@ We need to install required libraries.
 ```bash
 [root@cl1 ~]# yum install -y gcc glibc glibc-common openssl openssl-devel perl wget
 ```
-
 
 ##### B. Install Latest EPEL Repository And Update The System.
 Install Latest EPEL YUM Repository
