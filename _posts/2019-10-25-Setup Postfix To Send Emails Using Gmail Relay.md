@@ -43,8 +43,13 @@ STEP 02: Install & Configure Postfix Mail Server
 [root@nagios ~]# systemctl restart postfix
 ```
 
+#### 2. Install SASL binaries and libraries
 
-#### 2. Create SASL Password to able to authenticate with the Gmail server
+```bash
+[root@nagios ~]# sudo yum install cyrus-sasl cyrus-sasl-lib cyrus-sasl-plain
+```
+
+#### 3. Create SASL Password to able to authenticate with the Gmail server
 
 Open or create the /etc/postfix/sasl/sasl_passwd file and add the SMTP Host, username, and password information:
 Store Password Inside /etc/postfix/sasl_passwd
@@ -99,12 +104,69 @@ smtp_tls_security_level = verify
 smtp_tls_CAfile = /etc/ssl/certs/ca-bundle.crt
 ```
 
+Either, You can add following entries using  "postconf -e" command
+
+```bash
+postconf -e relayhost=[smtp.gmail.com]:587
+postconf -e smtp_sasl_auth_enable=yes
+postconf -e smtp_sasl_security_options=noanonymous
+postconf -e smtp_sasl_password_maps=hash:/etc/postfix/sasl/sasl_passwd
+postconf -e smtp_tls_security_level=encrypt
+postconf -e smtp_tls_security_level=verify
+postconf -e smtp_tls_CAfile=/etc/ssl/certs/ca-bundle.crt
+```
+
+
+
+Finally "main.cf" file will be look alike this...
+
+```bash
+alias_database = hash:/etc/aliases
+alias_maps = hash:/etc/aliases
+command_directory = /usr/sbin
+config_directory = /etc/postfix
+daemon_directory = /usr/libexec/postfix
+data_directory = /var/lib/postfix
+debug_peer_level = 2
+debugger_command = PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin ddd $daemon_directory/$process_name $process_id & sleep 5
+html_directory = no
+inet_interfaces = all
+inet_protocols = ipv4
+mail_owner = postfix
+mailq_path = /usr/bin/mailq.postfix
+manpage_directory = /usr/share/man
+mydestination = $myhostname, localhost.$mydomain, localhost
+newaliases_path = /usr/bin/newaliases.postfix
+queue_directory = /var/spool/postfix
+readme_directory = /usr/share/doc/postfix-2.10.1/README_FILES
+relayhost = [smtp.gmail.com]:587
+sample_directory = /usr/share/doc/postfix-2.10.1/samples
+sendmail_path = /usr/sbin/sendmail.postfix
+setgid_group = postdrop
+smtp_always_send_ehlo = yes
+smtp_sasl_auth_enable = yes
+smtp_sasl_password_maps = hash:/etc/postfix/sasl/sasl_passwd
+smtp_sasl_security_options = noanonymous
+smtp_tls_CAfile = /etc/ssl/certs/ca-bundle.crt
+smtp_tls_security_level = verify
+unknown_local_recipient_reject_code = 550
+```
+
+#### 8 Set Sender Email Address in /etc/aliases File
+
+```bash
+[root@nagios ~]# vim /etc/aliases
+root:       dimuit86@gmail.com
+```
 
 #### 9: Enable & Restart Postfix Service 
 ```bash
 [root@nagios ~]# systemctl enable postfix
 [root@nagios ~]# systemctl restart postfix
 ```
+
+
+
 
 #### 10: Sending an Test Email:
 
