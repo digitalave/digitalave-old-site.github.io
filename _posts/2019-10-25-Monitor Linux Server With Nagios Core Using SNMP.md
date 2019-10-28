@@ -2,11 +2,13 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'Monitor Linux Server With Nagios Core Using SNMP'
-image: /images/Docker-Installation/docker.jpg
-tags: [Nagios, Monitoring, CentOS 7, RHEL 7]
+image: /images/nagios-snmp/1.jpg
+tags: [Nagios, Monitoring, SNMP,CentOS 7, RHEL 7]
 category: Spring
 comments: true
 ---
+
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/ythjwVpuypo?&autoplay=1' frameborder='0' allowfullscreen></iframe></div>
 
 
 ## Monitor Linux Server With Nagios Core Using SNMP
