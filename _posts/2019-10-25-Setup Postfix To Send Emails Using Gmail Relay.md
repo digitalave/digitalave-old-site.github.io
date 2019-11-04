@@ -158,7 +158,7 @@ unknown_local_recipient_reject_code = 550
 
 ```bash
 [root@nagios ~]# vim /etc/aliases
-root:       dimuit86@gmail.com
+root:       Mail_ID@gmail.com
 ```
 
 #### 9: Enable & Restart Postfix Service 
