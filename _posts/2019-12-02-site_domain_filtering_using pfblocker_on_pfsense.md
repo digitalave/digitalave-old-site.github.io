@@ -25,7 +25,7 @@ Because, Squid can't do the man in the middle. most sites moved into SSL encrypt
 
 ### Requirements: 
 
-pfSense should be the default DNS server which pointed into client's hosts.
+**pfSense should be the default DNS server which pointed into client's hosts.**
 
 
 <img src="/images/pfBlocker-pfsense/1.png" width="100%">
@@ -64,10 +64,10 @@ Click on + Install and then on Confirm buttons to launch installation
 
 Once installation is completed, pfBlockerNG appears in System > Package Manager > Installed Packages
 
-Now, pfBlockerNG configuration can begin
+Now, pfBlockerNG configuration can begin.
 Before that we need to reconfigure our pfsense DNS resolver according to our requirement which need to redirect DNS requests in order to filter out bad domains. This means clients on the LAN interface need to use the pfSense as the default and primary DNS resolver.
 
-STEP 02: Configure DNS Resolver
+### STEP 02: Configure DNS Resolver
 
 Now, Head over to  "Services" and select "DNS Resolver" from  the drop down menu.
 
@@ -75,21 +75,21 @@ Now, Head over to  "Services" and select "DNS Resolver" from  the drop down menu
 
 <img src="/images/DNS-pfsense/2.png" width="100%">
 
-Enable DNS Resolver
+* Enable DNS Resolver
 
-Set the listning port 53
+* Set the listning port 53
 
-Ingress Network interface should be LAN & localhost
+* Ingress Network interface should be LAN & localhost
 
-Egress Outgoing Network Interface should be WAN interfaces
+* Egress Outgoing Network Interface should be WAN interfaces
 
 Finally hit "Save" & "Apply Changes" 
 
-STEP 03: Configure pfBlockerNG - Genaral Settings
+### STEP 03: Configure pfBlockerNG - General Settings
 
 Next step  is the configuration of pfBlocker specifically.
 
-Head over to  genaral tab do the following changes.
+Head over to  general tab do the following changes.
 
 Let's move to Firewall > pfBlockerNG > General
 
@@ -99,20 +99,16 @@ In General Settings section, fill the following fields:
 
 <img src="/images/pfBlocker-pfsense/7.png" width="100%">
 
-Enable pfBlockerNG: Checked
-Keep Settings: Checked
-Cron Settings: Select Every hour, select 0 as minute, hour and Daily/Weekly
-
+* Enable pfBlockerNG: Checked
+* Keep Settings: Checked
+* Cron Settings: Select Every hour, select 0 as minute, hour and Daily/Weekly
 
 Move down bit further...
 
-
-
 In Interface/Rules Configuration section, fill the following fields:
 
-Inbound Firewall Rules: Select WAN interfaces and Block
-
-Outbound Firewall Rules: Select LAN interfaces and Reject
+* Inbound Firewall Rules: Select WAN interfaces and Block
+* Outbound Firewall Rules: Select LAN interfaces and Reject
 
 <img src="/images/pfBlocker-pfsense/8.png" width="100%">
 
@@ -120,9 +116,9 @@ Rest of the other settings leave as it is...
 
 and click save.
 
-STEP 04: Configure DNSBL 
+### STEP 04: Configure DNSBL 
 
-Now move tp DNSBL tab and do the following changes.
+Now move t0 DNSBL tab and do the following changes.
 
 To configure DNSBL, go to Firewall > pfBlockerNG > DNSBL > DNSBL
 
@@ -132,26 +128,26 @@ To configure DNSBL, go to Firewall > pfBlockerNG > DNSBL > DNSBL
 
 In DNSBL section, fill the following fields:
 
-Enable DNSBL: Checked
-Enable TLD: Not checked
-DNSBL Virtual IP: Enter an IP address is not in your internal networks, something like 10.10.10.10
-DNSBL Listening Port: Enter 8081
-DNSBL SSL Listening Port: Enter 8443
-DNSBL Listening Interface: Select LAN or another internal interface to listen on
-DNSBL Firewall Rule: Checked if you have multiple LAN interfaces
+* Enable DNSBL: Checked
+* Enable TLD: Not checked
+* DNSBL Virtual IP: Enter an IP address is not in your internal networks, something like 10.10.10.10
+* DNSBL Listening Port: Enter 8081
+* DNSBL SSL Listening Port: Enter 8443
+* DNSBL Listening Interface: Select LAN or another internal interface to listen on
+* DNSBL Firewall Rule: Checked if you have multiple LAN interfaces
 
 <img src="/images/pfBlocker-pfsense/11.png" width="100%">
 
 In DNSBL IP Firewall Rule Settings section, fill the following fields:
 
-List Action: Select Deny Both
-Enable Logging: Select Enable
+* List Action: Select Deny Both
+* Enable Logging: Select Enable
 
-In Advanced Inbound Firewall Rule Settings : Don't change 
-In Advanced Outbound Firewall Rule Settings : Don't change
-In Alexa Whitelist : Don't change
+* In Advanced Inbound Firewall Rule Settings : Don't change 
+* In Advanced Outbound Firewall Rule Settings : Don't change
+* In Alexa Whitelist : Don't change
 
-In Custom Domain Whitelist :
+* In Custom Domain Whitelist :
 
 <img src="/images/pfBlocker-pfsense/12.png" width="100%">
 
@@ -190,32 +186,32 @@ To begin, enter the following white-list domains and modify as you like.
 .googleusercontent.com
 ```
 
-
-In TLD Exclusion List : Don't change 
-In TLD Blacklist : Don't change 
-In TLD Whitelist : Don't change
+* In TLD Exclusion List : Don't change 
+* In TLD Blacklist : Don't change 
+* In TLD Whitelist : Don't change
 
 Click on the Save button once all field are filling
 
-STEP 05: Configure DNSBL Feeds 
+### STEP 05: Configure DNSBL Feeds 
 
 To configure DNSBL feeds, go to Firewall > pfBlockerNG > DNSBL > DNSBL Feeds
 
 Click on + Add button
 
-Go to  this URL and add prefered lists.
+Go to  this URL and add preferred lists.
 
 <a href="https://github.com/StevenBlack/hosts" target="_blank">https://github.com/StevenBlack/hosts</a>
 
-In DNSBL Feeds section, fill the following fields:
-DNS GROUP Name: Enter DNSBlockListGroup
-Description: Enter DNS Block list
-DNSBL Settings – These are the actual lists
-State – Whether that source is used or not and how it is obtained
-Source – The link/source of the DNS Black List
-Header/Label – User choice; no special characters
-List Action – Set to Unbound
-Update Frequency – How often the list should be updated
+**In DNSBL Feeds section, fill the following fields:**
+
+* DNS GROUP Name: Enter DNSBlockListGroup
+* Description: Enter DNS Block list
+* DNSBL Settings – These are the actual lists
+* State – Whether that source is used or not and how it is obtained
+* Source – The link/source of the DNS Black List
+* Header/Label – User choice; no special characters
+* List Action – Set to Unbound
+* Update Frequency – How often the list should be updated
 
 <img src="/images/pfBlocker-pfsense/13.png" width="100%">
 
@@ -227,7 +223,7 @@ Now, save.
 
 <img src="/images/pfBlocker-pfsense/15.png" width="100%">
 
-Next, Headover to the "Update" tab. 
+Next, Head over to the "Update" tab. 
 
 Select "update" tick box and and hit the run button.
 
@@ -235,14 +231,13 @@ Now, It will  starts to update blacklist index.
 
 <img src="/images/pfBlocker-pfsense/16.png" width="100%">
 
-Now, Headover to "Status" tab and select "Services" from the drop  down menu.
+Now, Head over to "Status" tab and select "Services" from the drop  down menu.
 
 <img src="/images/pfBlocker-pfsense/17.png" width="100%">
 
 Now, restart both dnsbl & unbound services.
 
-
-STEP 05: Test Effectiveness by Browsing on Client Side.
+### STEP 05: Test Effectiveness by Browsing on Client Side.
 
 <img src="/images/pfBlocker-pfsense/18.png" width="100%">
 
