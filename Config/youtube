@@ -15,6 +15,7 @@ ff02::3 ip6-allhosts
 # Custom host records are listed here.
 #=====================================
 0.0.0.0 youtu.be
+0.0.0.0 youtube-ui.l.google.com
 0.0.0.0 s2.youtube.com
 0.0.0.0 youtube.com
 0.0.0.0 googlevideo.com
