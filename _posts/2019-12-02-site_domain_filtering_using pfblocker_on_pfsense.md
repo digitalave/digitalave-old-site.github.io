@@ -8,6 +8,8 @@ category: Spring
 comments: true
 ---
 
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/watch?v=Dqe7W_mtrH0?&autoplay=1' frameborder='0' allowfullscreen></iframe></div>
+
 ### Internet Content Filtering / Site Blocking Using pfBlockerNG on pfSense
 
 pfBlockerNG extent the capability of the pfsense firewall beyond the traditional state full firewall.
@@ -242,4 +244,28 @@ Now, restart both dnsbl & unbound services.
 <img src="/images/pfBlocker-pfsense/18.png" width="100%">
 
 <img src="/images/pfBlocker-pfsense/19.png" width="100%">
+
+**Reference : ** 
+=================================================================
+**Here are the required resources to complete this tutorial:**
+
+My Website:
+1. https://digitalave.github.io/spring/2019/12/02/site_domain_filtering_using-pfblocker_on_pfsense.html
+
+Steven's Block List:
+
+2. https://github.com/StevenBlack/hosts
+
+YouTube Black List:
+
+3.https://raw.githubusercontent.com/digitalave/digitalave.github.io/master/Config/youtube
+
+4. Pi-Hole Black List:
+
+https://github.com/pi-hole/pi-hole/wiki/Customising-sources-for-ad-lists
+
+================================================================
+
+
+
 
