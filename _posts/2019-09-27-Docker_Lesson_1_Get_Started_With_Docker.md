@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'Lession 01 : Install Docker on CentOS7 /Redhat RHEL7'
-image: /images/Docker-Installation/docker.jpg
+image: /images/Docker-Installation/docker_N.jpg
 tags: [Docker, Containers,MicroServices, CentOS 7,RHEL 7]
 category: Spring
 comments: true
@@ -46,7 +46,7 @@ Docker is a tool designed to make it easier to create, deploy, and run applicati
 
 **Docker is available in three Editions:**
 
-<img src="/images/Docker-Installation/1.jpg" width="100%">
+<img src="/images/Docker-Installation/1_N.jpg" width="100%">
 
 1. Docker Engine - Community Edition (CE):
 
@@ -76,7 +76,7 @@ A Single Container Includes:
 
 <u>Supported Platforms</u>
 
-<img src="/images/Docker-Installation/2.jpg" width="100%">
+<img src="/images/Docker-Installation/2_N.jpg" width="100%">
 
 
 ##### Install Docker Engine - Community For CentOS 7 / RHEL 7

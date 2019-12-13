@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'Install Ubuntu 18.04 on Oracle VirtualBox'
-image: images/ubuntu/Ubuntu.jpg
+image: images/ubuntu/Ubuntu_N.jpg
 tags: [LibreNMS, Server Monitoring]
 category: Testing
 comments: true

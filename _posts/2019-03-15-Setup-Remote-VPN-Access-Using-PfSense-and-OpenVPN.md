@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'Setup Remote VPN Access Using PfSense and OpenVPN'
-image: /images/pf-vpn/pf-openvpn.jpg
+image: /images/pf-vpn/pf-openvpn_N.jpg
 tags: [pfSense, Firewall, OpenVPN, VPN]
 category: Spring
 comments: true
@@ -19,13 +19,13 @@ In this guide I assume you already have a functional pfSense firewall running.
 
 A. Create a Virtual Machine for Pfsense
 
-<img src="/images/pf-vpn/image001.jpg" width="100%">
+<img src="/images/pf-vpn/image001_N.jpg" width="100%">
 
-<img src="/images/pf-vpn/image002.jpg" width="100%">
+<img src="/images/pf-vpn/image002_N.jpg" width="100%">
 
 Select OpenVPN Authentication Backed Type
 
-<img src="/images/pf-vpn/image003.jpg" width="100%">
+<img src="/images/pf-vpn/image003_N.jpg" width="100%">
 
 In this tutorial I have used “Local User Access” as the authenticated backed type.
 
@@ -35,13 +35,13 @@ Create a Certificate Authority to generate certificates for the OpenVPN server.
 
 Fill out the following fields to create a new CA.
 
-<img src="/images/pf-vpn/image004.jpg" width="100%">
+<img src="/images/pf-vpn/image004_N.jpg" width="100%">
 
 ## STEP 3:- Create Server Certificate
 
 Create a Server Certificate from the CA for OpenVPN.
 
-<img src="/images/pf-vpn/image005.jpg" width="100%">
+<img src="/images/pf-vpn/image005_N.jpg" width="100%">
 
 ## STEP 4:- OpenVPN Genaral Settings Configuration
 
@@ -55,7 +55,7 @@ LocalPort: 1194
 
 Description: VPN
 
-<img src="/images/pf-vpn/image006.jpg" width="100%">
+<img src="/images/pf-vpn/image006_N.jpg" width="100%">
 
 Cryptographic Settings Configuration
 
@@ -111,7 +111,7 @@ Finally finish the wizard.
 
 If you selected the “local user access” option during the VPN wizard then users can be added through the pfSense user manger.
 
-<img src="/images/pf-vpn/image013.jpg" width="100%">
+<img src="/images/pf-vpn/image013_N.jpg" width="100%">
 
 Create new user.
 
@@ -125,11 +125,11 @@ Create new user.
 
 Install OpenVPN Client Export package using Pfsense package manager.
 
-<img src="/images/pf-vpn/image017.jpg" width="100%">
+<img src="/images/pf-vpn/image017_N.jpg" width="100%">
 
 <img src="/images/pf-vpn/image018.png" width="100%">
 
-<img src="/images/pf-vpn/image019.jpg" width="100%">
+<img src="/images/pf-vpn/image019_N.jpg" width="100%">
 
 After the installation there will be a new tab named with “Client Export” in OpenVPN menu.
 
@@ -156,11 +156,11 @@ Download and install OpenVPN client application.
 
 Install downloaded OpenVPN profile.
 
-<img src="/images/pf-vpn/image024.jpg" width="100%">
+<img src="/images/pf-vpn/image024_N.jpg" width="100%">
 
-<img src="/images/pf-vpn/image025.jpg" width="100%">
+<img src="/images/pf-vpn/image025_N.jpg" width="100%">
 
-<img src="/images/pf-vpn/image026.jpg" width="100%">
+<img src="/images/pf-vpn/image026_N.jpg" width="100%">
 
 **Little Request:**
 

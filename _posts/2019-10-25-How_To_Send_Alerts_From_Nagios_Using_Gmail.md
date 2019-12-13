@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'How To Send Alerts From Nagios Core Using Gmail'
-image: /images/Docker-Installation/docker.jpg
+image: /images/Docker-Installation/docker_N.jpg
 tags: [Nagios, Postfix, Gmail, CentOS 7, RHEL 7]
 category: Spring
 comments: true

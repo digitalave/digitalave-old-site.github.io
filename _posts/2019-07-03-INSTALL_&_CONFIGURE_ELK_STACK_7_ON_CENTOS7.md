@@ -544,18 +544,18 @@ OR
 (If nginx/apache proxy redirect with VHOST)
 `http://YOURIP.com:80`
 
-<img src="/images/elk-stack68/1.JPG" width="100%">
+<img src="/images/elk-stack68/1_N.jpg" width="100%">
 
 Navigate To
 
 `Managemnt >> Kibana >> Create Index Pattern`
 
-<img src="/images/elk-stack68/6.JPG" width="100%">
+<img src="/images/elk-stack68/6_N.jpg" width="100%">
 Now Navigate To 
 
 `Discover >> (Now You Search For Logs By Available Fields)`
 
-<img src="/images/elk-stack68/3.jpg" width="100%">
+<img src="/images/elk-stack68/3_N.jpg" width="100%">
 
 ### Bottom Line: 
 
@@ -573,7 +573,7 @@ Now Navigate To
 
 **Video Tutorial on YouTube Will Be Available Soon.**
 
-<img src="/images/elk-stack68/5.jpg" width="100%">
+<img src="/images/elk-stack68/5_N.jpg" width="100%">
 
 
 

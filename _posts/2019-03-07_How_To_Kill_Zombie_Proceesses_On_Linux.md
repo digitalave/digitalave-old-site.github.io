@@ -2,13 +2,13 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'How To Kill Zombie Processes on Linux'
-image: /images/zombie_process/Zombie.jpg
+image: /images/zombie_process/Zombie_N.jpg
 tags: [pfSense, Firewall, Captive Portal, WIFI]
 category: Spring
 comments: true
 ---
 
-<img src="/images/zombie_process/Zombie.jpg" width="100%">
+<img src="/images/zombie_process/Zombie_N.jpg" width="100%">
 
 ### How To Kill Zombie Processes on Linux
 

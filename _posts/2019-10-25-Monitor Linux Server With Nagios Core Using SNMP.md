@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'Monitor Linux Server With Nagios Core Using SNMP'
-image: /images/nagios-snmp/1.jpg
+image: /images/nagios-snmp/1_N.jpg
 tags: [Nagios, Monitoring, SNMP,CentOS 7, RHEL 7]
 category: Spring
 comments: true

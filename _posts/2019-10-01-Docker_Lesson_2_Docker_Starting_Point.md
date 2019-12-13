@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'Lession 02 : Docker Basics - Where Am I Start Learn Docker ?'
-image: /images/Docker-Installation/docker.jpg
+image: /images/Docker-Installation/docker_N.jpg
 tags: [Docker, Containers,MicroServices, CentOS 8,RHEL 8]
 category: Spring
 comments: true
