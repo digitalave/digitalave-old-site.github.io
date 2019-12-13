@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'Internet Content Filtering / Site Blocking Using pfBlockerNG on pfSense'
-image: /images/pfBlocker-pfsense/pfblocker.jpg
+image: /images/pfBlocker-pfsense/pfblocker_N.jpg
 tags: [SquidGuard, Firewall, pfBlockerNG, pfsense]
 category: Spring
 comments: true

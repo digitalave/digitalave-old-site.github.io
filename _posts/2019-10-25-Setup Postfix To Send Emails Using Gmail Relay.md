@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'Setup Postfix To Send Emails Using Gmail Relay'
-image: /images/postfix-gmail/1.jpg
+image: /images/postfix-gmail/1_N.jpg
 tags: [Postfix, Gmail, CentOS 7, RHEL 7]
 category: Spring
 comments: true
