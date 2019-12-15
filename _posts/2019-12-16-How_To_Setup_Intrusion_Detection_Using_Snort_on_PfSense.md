@@ -122,7 +122,7 @@ Now, let's move to "**Snort Interfaces**" tab and add new Snort interface.
 
 Services > Snort > Interfaces
 
-Snort Interfaces > Add New Interface
+**Snort Interfaces > Add New Interface**
 
 <img src="/images/Snort-pfsense/snort_10_N.jpg" width="100%">
 
