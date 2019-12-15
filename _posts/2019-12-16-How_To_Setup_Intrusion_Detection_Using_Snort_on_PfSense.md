@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'How To Setup Intrusion Detection Using Snort on PfSense'
-image: /images/Snort-pfsense/pfblocker_N.jpg
+image: /images/pfBlocker-pfsense/pfblocker_N.jpg
 tags: [SquidGuard, Firewall, pfBlockerNG, pfsense]
 category: Spring
 comments: true
@@ -20,11 +20,15 @@ In this case you should consider deploying IDS or IPS system to detect and prote
 
 In order to install Snort.
 
-Headover to...  
+Headover to... 
+
 **System > Package Manager > Available Packages**
 
 <img src="/images/Snort-pfsense/snort_1_N.jpg" width="100%">
 
+<img src="/images/pfBlocker-pfsense/1.png" width="100%">
+
+<img src="/images/Snort-pfsense/snort_1_N.jpg" width="100%">
 
 Search for a package named "**snort**"
 
