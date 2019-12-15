@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'Internet Content Filtering / Site Blocking Using pfBlockerNG on pfSense'
