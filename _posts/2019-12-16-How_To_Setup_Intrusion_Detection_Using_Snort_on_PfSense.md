@@ -118,11 +118,11 @@ It will download all required rules automatically.
 
 ### STEP 04: Add Snort To an Interface
 
-Now, let's move to "**Snort Interfaces**" tab and **add** new Snort interface.
+Now, let's move to "**Snort Interfaces**" tab and add new Snort interface.
 
-**Services > Snort > Interfaces**
+Services > Snort > Interfaces
 
-**Snort Interfaces > Add New Interface**
+Snort Interfaces > Add New Interface
 
 <img src="/images/Snort-pfsense/snort_10_N.jpg" width="100%">
 
@@ -130,13 +130,12 @@ Now, let's move to "**Snort Interfaces**" tab and **add** new Snort interface.
 * **Always selecet WAN Interface**
 * **Provice a Description**
 * **Send Alterts to System Logs**
-
 * **Block Offenders : Enabled**
 * **Search Optimize: Enable search optimization**
 
 <img src="/images/Snort-pfsense/snort_11_N.jpg" width="100%">
 
-And finally hit **save**.
+And finally hit save
 
 
 <img src="/images/Snort-pfsense/snort_12_N.jpg" width="100%">
