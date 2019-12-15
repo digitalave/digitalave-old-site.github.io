@@ -124,7 +124,7 @@ Now, let's move to "**Snort Interfaces**" tab and **add** new Snort interface.
 
 **Snort Interfaces > Add New Interface**
 
-<IMG10>
+<img src="/images/Snort-pfsense/snort_10_N.jpg" width="100%">
 
 * **Enable Interface**
 * **Always selecet WAN Interface**
@@ -134,22 +134,18 @@ Now, let's move to "**Snort Interfaces**" tab and **add** new Snort interface.
 * **Block Offenders : Enabled**
 * **Search Optimize: Enable search optimization**
 
-<IMG11>
+<img src="/images/Snort-pfsense/snort_11_N.jpg" width="100%">
 
 And finally hit **save**.
 
 
-<IMG12>
+<img src="/images/Snort-pfsense/snort_12_N.jpg" width="100%">
 
 ### STEP 05: Select Which Types of Rules Will Protect The Network
 
 Head over to  "**Interfaces**" and Select an configured interface, hit the **edit** button. And move to  "**WAN Categories**" tab.
 
 **Services > Snort > Edit Interface> WAN2** 
-
-#Automatic Flowbit Resolution
-
-#Resolve Flowbit : Enabled
 
 ##### Snort VRT IPS Policy Selection
 
