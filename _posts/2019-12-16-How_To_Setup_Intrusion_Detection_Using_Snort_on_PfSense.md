@@ -11,10 +11,13 @@ comments: true
 ## How To Setup Intrusion Detection Using Snort on PfSense
 
 **Snort** is an intrusion detection and prevention system.
-Snort protects your network against hackers, security threats such as exploits, DDOS attacks and viruses. 
-Network security is on of the most highly demand discussion now a days.
+Snort protects your network against hackers, security threats such as exploits, DDOS attacks and viruses.
 
-In this case you should consider deploying IDS or IPS system to detect and protect your network from attackers.
+Snort detects attack methods, including denial of service, buffer overflow, CGI attacks, stealth port scans, and SMB probes
+
+Snort monitors network traffic and analize against a predefined rules. Then catagorized network attack. Finally, Sonrt involks actions against matching rules.
+
+In this case you should consider deploying intrution detection and prevention system to detect and protect your network from attackers.
 
 ### STEP 01: Install Snort
 
