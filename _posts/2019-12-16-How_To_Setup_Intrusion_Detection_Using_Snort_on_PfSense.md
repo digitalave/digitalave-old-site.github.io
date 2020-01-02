@@ -12,15 +12,15 @@ comments: true
 
 **Snort** is an intrusion detection and prevention system.
 Snort protects your network against hackers, security threats such as exploits, DDOS attacks and viruses. 
-Network security is on of the Highly demand discussion now a days.
+Network security is on of the most highly demand discussion now a days.
 
 In this case you should consider deploying IDS or IPS system to detect and protect your network from attackers.
 
 ### STEP 01: Install Snort
 
-In order to install Snort.
+Now Let's start to install Snort package.
 
-Headover to... 
+Headover to...
 
 **System > Package Manager > Available Packages**
 
@@ -30,7 +30,7 @@ Search for a package named "**snort**"
 
 <img src="/images/Snort-pfsense/snort_2_N.jpg" width="100%">
 
-Hit **Install** & then **confirm** the installation to proceed. 
+Hit the **Install** button & then **confirm** the installation to proceed. 
 
 It grabs required repos from pfsense repositories.
 
@@ -42,13 +42,16 @@ It grabs required repos from pfsense repositories.
 
 **Services > Snort > Global Settings**
 
-To setting up Snort for the first time we need to head over to "**Global Settings**" tab and enable required rule sets to be downloaded. 
+To setting up Snort for the first time, We need to head over to "**Global Settings**" tab and enable required rule sets to be downloaded. 
+
+Enable Snort VRT
 
 * **Snort VRT** : **Enabled**
 
 <img src="/images/Snort-pfsense/snort_5_N.jpg" width="100%">
 
-Either you can sing up as a free user or paid user. After you singed up,  you will get a "snort OinkMaster Code"
+Either you can sign up as a free user or paid user. 
+After you singed up,  you will get a "snort OinkMaster Code"
 
 First of all you'll need to get registered on www.snort.org.
 They will provide a unique code after the registration.
@@ -63,14 +66,15 @@ REF: <a href="https://www.snort.org/" target="_blank">https://www.snort.org/</a>
 
 <img src="/images/Snort-pfsense/snort_6.3_N.jpg" width="100%">
 
-They do have thousands of pre defined rule sets. These, rules are the source for all of these. 
+They have thousands of pre defined rule sets. These, rules are the source for the Snort System.
 
-Phase it here. In order to  download the rule sets.
+Phase the Oinkmater Code in the "Snort Oikmaster Code" In order to download the free Snort rule sets.
 
-This rule database update every 24hrs.. 
-Rules are the source for Snort.
+This rule databases update every 24hrs.. 
 
-The Snort GPLv2 Community Rules and the Emerging Threats Open Rules are both available for free with no registration required. In here we can enable both of them as well.
+And also  can use Snort GPLv2 Community Rules and the Emerging Threats (ET )Open Rules freely. You don't need to register to use them.
+
+In here we can enable both of them as well.
 
 * **Snort GPLv2 : Enabled**
 * **Emergin Threats (ET) Open : Enabled**
@@ -79,34 +83,40 @@ The Snort GPLv2 Community Rules and the Emerging Threats Open Rules are both ava
 
 **Application detection (AppID)**
 
-OpenAppID detectors and rules, Snort package enables application detection and filtering.
+OpenAppID detector rules enables application detection and filtering facility to the Snort.
 
-OpenAppID has an ability to look at the application layer. Which is Layer 7.  Which can look at the applications which running in the system.
+OpenAppID has an ability to look at the application layer. Which is Layer 7. 
+Which can look at the applications which running in the system.
 
 <img src="/images/Snort-pfsense/snort_7_N.jpg" width="100%">
 
 ##### Rules Update Settings
 
+Here I'm going to set the update interval into a one day.
+
 * **Update Interval : 1 Day**
 
 ##### General Settings
 
+Set a reasonable time for "Remove Blocked Hours Interval". In here I'll set 30mins.
+
 * **Remove Blocked Hours Interval : 30 Mins**
 
-If you need to allow access again into blocked hosts automatically. If someone did some nasty thing and then the machine will be blocked and, then if again he may needs access to...
+If someone did nasty thing in your network. That device will automatically will be blocked by the system. 
+Then, Either you need to unblock that device manually or 30mins after it will ublocked automatically.
 
-Hit "**Save**"
+Now, Hit the "**Save**" button.
 
 <img src="/images/Snort-pfsense/snort_8_N.jpg" width="100%">
 
-
 ### STEP 03: Update Snort Rule Databases
 
-Now head over to Update tab and hit the "**Update Rules**" button  to download the latest rule package updates.
+Now head over to Update tab and hit the "**Update Rules**" button to download the latest updates.
 
 **System > Snort > Update Rules**
 
 It will download all required rules automatically.
+Initially this take a little logner time. wait untill it completed.
 
 <img src="/images/Snort-pfsense/snort_9.1_N.jpg" width="100%">
 
@@ -114,7 +124,10 @@ It will download all required rules automatically.
 
 ### STEP 04: Add Snort To an Interface
 
+Then we need to add a WAN interace to "Snort Interface" sections.
 Now, let's move to "**Snort Interfaces**" tab and add new Snort interface.
+
+Goto "Services" menu and select Snort, Then select Interface tab.
 
 Services > Snort > Interfaces
 
@@ -124,7 +137,7 @@ Services > Snort > Interfaces
 
 * **Enable Interface**
 * **Always selecet WAN Interface**
-* **Provice a Description**
+* **Provide a Description**
 * **Send Alterts to System Logs**
 * **Block Offenders : Enabled**
 * **Search Optimize: Enable search optimization**
@@ -132,7 +145,6 @@ Services > Snort > Interfaces
 <img src="/images/Snort-pfsense/snort_11_N.jpg" width="100%">
 
 And finally hit save
-
 
 <img src="/images/Snort-pfsense/snort_12_N.jpg" width="100%">
 
@@ -153,9 +165,9 @@ If you are not familiar with the Snort,  I recommend you to use "**Connectivity*
 
 In here I'm going to use "**Security**" as my **IPS Policy**.
 
-Select the rule-sets (Categories) Snort will load at startup:
+And also you can enable and select other rule sets such as GPL Community Rules, ET Open Rules and Open AppID Rules.
 
-If VRT Rule set not being used, You can select other rule set by checking the check boxes to be used.
+Select the rule-sets what ever you need. At this point, I'm going to enable the all ET Rules for the demostration purpose. 
 
 <img src="/images/Snort-pfsense/snort_13.2_N.jpg" width="100%">
 
@@ -169,6 +181,8 @@ Now, I'm going to configure Snort further.
 Let's, head over to...
 
 **Services > Snort > Snort interfaces > WAN Pre-Processes** 
+
+Enable "Performance Stats" option if you want to have logging in depth details.
 
 * **Enable Performance Stats** : If you wanna have logging in depth details through the rules.
 
@@ -184,7 +198,8 @@ Move down further and go to...
 
 <img src="/images/Snort-pfsense/snort_15_N.jpg" width="100%">
 
-Enabling OpenAppID and its rules is done from Snort Global Settings. Select both check-boxes to enable detectors and rules download. Save the page. So, double check whether both check boxes were checked.
+Enable "Application ID Detection". 
+And double check both check-boxes to enable detectors and rules download for "Source fire OpenAppID Detection" section in the Global Settings.
 
 <img src="/images/Snort-pfsense/snort_16_N.jpg" width="100%">
 
@@ -192,13 +207,15 @@ Better,  If rest of settings leave as it is...
 
 Then, Hit save 
 
-Make sure to "**Update**" Once **AppID** enabled.
+Make sure to "**Update**" Once again after the **AppID** enabled.
 
 ### STEP 07: View Detected Apps
 
+Then, We need to know how to view Snort Alters.  
+
 Now move to "**Alerts**" tab to view the detected applications.
 
-Ok, I'll show you the alerts after snort service started.
+At this time we don't have any alters, but I'll  show you after the Snort service started.
 
 ### STEP 08: Start Snort Service
 
@@ -208,14 +225,16 @@ Let's head-over to
 
 and click on the small **play** button. Then it will start the service on the WAN interface.
 
+At this time you will notice, These are considarable resources are using by Snort service.
+Better if you are consider upgrading pfSense box hardware resources if it is pron to resource hungry when the Snort service starts.
+
 ### STEP 09: Getting to know the alerts
+
+All the Snort logs will be recorded in the **General Logs** section.
 
 **Status > System Logs**
 
-All these will be logged under **General Logs**
-
-Also you can use "**Alerts**" tab to view alerts generated by Snort.
-
+Also you can use "**Alerts**" tab to view alerts generated by the Snort.
 
 **Service > Snort > Alerts**
 
