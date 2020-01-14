@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'Install Wazuh on CentOS/RHEL - Automatic Log Data Analysis, Intrusion Detection, Security Analytics, File Integrity Monitoring,Vulnerability Detection'
-image: /images/Zabbix44/zabbix44.jpg
+image: /images/wazuh/wazuh.png
 tags: [Wazuh,Automatic Log Data Analysis, Intrusion Detection, Security Analytics, File Integrity Monitoring,Vulnerability Detection, Configuration Assessment, Incident Response, Regulatory Compliance, Cloud Security Monitoring, Containers Security]
 category: Spring
 comments: true
@@ -206,7 +206,7 @@ You must have a C compiler pre-installed in your system.
 3- Configuring Wazuh.
 
   3.1- Do you want e-mail notification? (y/n) [n]: y 
-   - What's your e-mail address? dimuit86@gmail.com
+   - What's your e-mail address? user@gmail.com
 
    - We found your SMTP server as: alt1.gmail-smtp-in.l.google.com.
    - Do you want to use it? (y/n) [y]: y
@@ -1024,4 +1024,6 @@ Added.
 ```bash
 root@DA-PC:~# systemctl restart wazuh-agent.service
 ```
-
+<img src="/images/wazuh/1.png" width="100%">
+<img src="/images/wazuh/2.png" width="100%">
+<img src="/images/wazuh/3.png" width="100%">
