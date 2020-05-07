@@ -2,11 +2,12 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'How to Install & Configure Jenkins on Ubuntu 18.04 LTS / 16.04 / Debian'
-image: /images/SonarQube_Ubuntu/Jenkins.jpg
+image: \images\jenkins-ubuntu\Jenkins.jpg
 tags: [Jenkins, CICD, Automation,Continuous Integration, Continuous Delivery]
 category: Spring
 comments: true
 ---
+<img src="\images\jenkins-ubuntu\Jenkins.jpg" width="100%">
 ## How to Install & Configure Jenkins on Ubuntu / Debian (16.04LTS,18.04LTS)
 
 ### Introduction:
