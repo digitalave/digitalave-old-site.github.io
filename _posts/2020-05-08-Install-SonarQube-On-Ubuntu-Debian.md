@@ -10,6 +10,8 @@ comments: true
 
 ## How to Install and Configure SonarQube 8 on Ubuntu 18.04 LTS / Debian
 
+<img src="\images\jenkins-ubuntu\sonarqube.jpg" width="100%">
+
 ### Introduction:
 
 SonarQube is an open-source platform. Which uses for static code analysis and continuous inspection of code quality. SonarQube can detect bugs, code smells and security vulnerabilities.SonarQube empowers developers to write cleaner and safer code.
