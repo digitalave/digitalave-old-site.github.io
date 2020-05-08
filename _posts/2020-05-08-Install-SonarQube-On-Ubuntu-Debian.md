@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'How to Install & Configure SonarQube 8 on Ubuntu 18.04 LTS / 16.04 / Debian'
-image: \images\jenkins-ubuntu\sonarqube.jpg
+image: \images\SonarQube-Ubuntu\sonarqube.jpg
 tags: [Jenkins, CICD, Automation,Continuous Integration, Continuous Delivery,SonarQube]
 category: Spring
 comments: true
@@ -10,7 +10,7 @@ comments: true
 
 ## How to Install and Configure SonarQube 8 on Ubuntu 18.04 LTS / Debian
 
-<img src="\images\jenkins-ubuntu\sonarqube.jpg" width="100%">
+<img src="\images\SonarQube-Ubuntu\sonarqube.jpg" width="100%">
 
 ### Introduction:
 
