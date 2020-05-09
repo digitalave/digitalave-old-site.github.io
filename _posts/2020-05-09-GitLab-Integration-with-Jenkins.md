@@ -45,9 +45,9 @@ Go to Manage Plugin section, then search and install following plugins on your J
 
 **Manage Jenkins > Manage Plugins > Available Plugin [Search] > Install & Restart** 
 
-<img src="\images\GitLab_Jenkins\1.png" width="100%">
-<img src="\images\GitLab_Jenkins\2.png" width="100%">
-<img src="\images\GitLab_Jenkins\3.png" width="100%">
+<img src="\images\GitLab_Jenkins\1.png" width="auto" width="100%">
+<img src="\images\GitLab_Jenkins\2.png" width="auto" width="100%">
+<img src="\images\GitLab_Jenkins\3.png" width="auto" width="100%">
 
 
 ### STEP 02: Create a New GitLab User / Promote Existing GitLab User 
@@ -62,7 +62,7 @@ Now, Let's head-over to GitLAB account and move to your profile setting section.
 
 **User Settings > Access Tokens** 
 
-<img src="\images\GitLab_Jenkins\4.png" width="100%">
+<img src="\images\GitLab_Jenkins\4.png" width="auto" width="100%">
 
 Create a new Personal Access Token for Jenkins authentication.
 
