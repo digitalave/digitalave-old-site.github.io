@@ -77,7 +77,7 @@ Save the deployed token somewhere safe. Once you leave or refresh the page, you 
 **NOTE: Once you've generated a Personal Access Token copy it and save in a separate file immediately.Because, Token only visible only once.**
 
 
-`Jenkins-GitLAB_API-Access : iDJff4a5fUEFoCBGkVzY`
+`Jenkins-GitLAB_API-Access : i5Jfi8a5foEFoC9CkVzl`
 
 ### STEP 03: Add GitLab Credentials to Jenkins
 
