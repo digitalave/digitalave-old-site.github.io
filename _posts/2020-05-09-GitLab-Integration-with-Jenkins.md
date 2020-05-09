@@ -26,6 +26,7 @@ Organizations using Jenkins to build and deploy their applications and integrate
 
 **GitLab - Jenkins integration allows you to build and deploy application on Jenkins and reflect the output on  the GitLab UI more convenience**
 
+GitLab & Jenkins integration allows you to trigger a Jenkins build when a code is pushed to a repository, or when a merge request is created. 
 
 ### STEP 01: Install GitLAB Plugins on Jekins Server
 
