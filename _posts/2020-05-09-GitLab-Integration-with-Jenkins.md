@@ -45,7 +45,7 @@ Go to Manage Plugin section, then search and install following plugins on your J
 
 **Manage Jenkins > Manage Plugins > Available Plugin [Search] > Install & Restart** 
 
-<img src="\images\GitLab_Jenkins\1.png" width="auto" width="50%">
+<img src="\images\GitLab_Jenkins\1.png" width="auto" width="100%">
 <img src="\images\GitLab_Jenkins\2.png" width="auto" width="100%">
 <img src="\images\GitLab_Jenkins\3.png" width="auto" width="100%">
 
@@ -123,7 +123,6 @@ Then, Configure following entries...
 Finally, Check whether connection is successful by pressing "**Test Connection**" button.
 If connection successful. Then move to next step.
 
-<img src="\images\GitLab_Jenkins\12.png" width="100%">
 
 Now, Connection between Jenkins and GitLab is OK. GitLab API plugin used to access for Jenkins to get metadata from  GitLab.
 
