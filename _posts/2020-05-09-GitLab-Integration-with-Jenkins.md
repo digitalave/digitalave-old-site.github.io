@@ -45,7 +45,7 @@ Go to Manage Plugin section, then search and install following plugins on your J
 
 **Manage Jenkins > Manage Plugins > Available Plugin [Search] > Install & Restart** 
 
-<img src="\images\GitLab_Jenkins\1.png" width="auto" width="100%">
+<img src="\images\GitLab_Jenkins\1.png" width="auto" width="50%">
 <img src="\images\GitLab_Jenkins\2.png" width="auto" width="100%">
 <img src="\images\GitLab_Jenkins\3.png" width="auto" width="100%">
 
