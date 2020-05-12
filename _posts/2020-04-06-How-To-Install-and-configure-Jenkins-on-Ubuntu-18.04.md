@@ -7,7 +7,8 @@ tags: [Jenkins, CICD, Automation,Continuous Integration, Continuous Delivery]
 category: Spring
 comments: true
 ---
-<img src="\images\jenkins-ubuntu\Jenkins.jpg" width="100%">
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/rqJPEACdrmM?&autoplay=1' frameborder='0' allowfullscreen></iframe></div>
+
 ## How to Install & Configure Jenkins on Ubuntu / Debian (16.04LTS,18.04LTS)
 
 ### Introduction:
@@ -46,8 +47,9 @@ Following JDK/JRE Versions support for current Jenkins versions
 
 REF: <a href="https://www.jenkins.io/doc/administration/requirements/java/" target="_blank">https://www.jenkins.io/doc/administration/requirements/java/</a>
 
-
 ### STEP 01: Install Oracel/Open JDK 11
+
+Now, I'm going to install OpenJDK 11 on my system.
 
 ##### Install OpenJDK
 
@@ -82,7 +84,13 @@ sudo wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt
 
 ##### Add Jenkins Repository
 
-sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+```bash
+sudo wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+```
+
+```bash
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+```
 
 ##### Install Jenkins
 

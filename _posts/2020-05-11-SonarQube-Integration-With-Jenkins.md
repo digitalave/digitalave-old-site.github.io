@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'How To Integrate SonarQube With Jenkins'
@@ -138,9 +138,17 @@ Fill-out details on general section
 Here I have used GitLab for my source code management task. 
 In here you can provide your own Github/GitLab repository URL and SSH Key for GitLab, as show in my "GitLab integration with Jenkins" tutorial.
 
+Refer this article to know how to use SSH key authention with Gitlab.
+
+REF: <a href="https://digitalave.github.io/spring/2020/05/09/GitLab-Integration-with-Jenkins.html" target="_blank">https://digitalave.github.io/spring/2020/05/09/GitLab-Integration-with-Jenkins.html</a>
+
 <img src="\images\Sonar-Jenkins\10.png" width="auto" width="100%">
 
 <img src="\images\Sonar-Jenkins\11.png" width="auto" width="100%">
+
+
+Alternatively, You also can directly enter your GitLab username and password in Jenkins > Credentials > System > Global Credentials > Add Credentials > Select "Username Password" from  the drop down menu as the option for "Kind"
+
 
 Now, Let's move on to "**Build**" section, and click "**Add build step**" and select "**Execute Sonar Scanner**" option
 
@@ -150,22 +158,25 @@ Task to run : Define a name for Scanner
 
 JDK : Leave it default or set your own JAVA 
 
-Path to project properties : Use this, if you load analysis properties load from a sonar-project.properties file
+Path to project properties : In here, you can define sonar-project.properties file location. [Optional]
 
 Analysis properties : Define Analysis Properties
 
-
-
 ```bash
-project.settings=/var/lib/jenkins/tools/sonar-project.properties
 sonar.projectBaseDir=/var/lib/jenkins/workspace/{YOUR_PRJECT_DIRECTORY}
 sonar.language={YOUR LANGUAGE}
 sonar.login={SONARQUBE_API_TOKEN}
 sonar.projectVersion=1.0
 sonar.sources=.
 sonar.verbose=true
+sonar.projectKey={PROJECT_NAME}
+sonar.host.url={SONARQUBE_URL:PORT/DNS_NAME}
+sonar.projectName={PROJECT_NAME}
+sonar.sourceEncoding=UTF-8
+sonar.project.settings=/var/lib/jenkins/workspace/{PROJECT_NAME}/sonar-project.properties
+sonar.analysis.mode=publish
+sonar.buildbreaker.skip=true
 ```
-
 
 <img src="\images\Sonar-Jenkins\12.png" width="auto" width="100%">
 
@@ -188,7 +199,15 @@ Great, Now head over to your SonarQube server. And you'll see the analysis repor
 <img src="\images\Sonar-Jenkins\22.png" width="auto" width="100%">
 
 
+Troubleshooting Tips: 
 
+Issue : Unable To Load Component Class --- Project.lock
+		Report Task
+		GitLab Errors
+Resolution : Remove GitLab Plugin from SonarQube Server
+
+https://github.com/adnovum/sonar-build-breaker
+https://github.com/gabrie-allaigre/sonar-gitlab-plugin
 
 
 
