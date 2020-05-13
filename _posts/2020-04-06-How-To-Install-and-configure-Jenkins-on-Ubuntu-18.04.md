@@ -162,7 +162,7 @@ Now you've successfully installed Jenkins on your Ubuntu system.
 
 ##### Bottom Line
 
-##### In this tutorial, you have learned how to install and perform the initial configuration of Jenkins. 
+##### I hope you learned how to install Jenkins on Ubuntu. And In the next tutorial, I'll show you how to integrate GitLab with your newly built Jenkins server.
 
 ##### If you have any questions, Please leave a comment on the YouTube comment section. 
 
