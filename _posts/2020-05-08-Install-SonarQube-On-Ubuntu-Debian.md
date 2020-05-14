@@ -107,19 +107,6 @@ Then, Install OpenJDK 11
 sudo apt-get install openjdk-11-jdk -y
 ```
 
-
-OR
-
-**Download & Install JDK 11 using .deb Package**
-
-Alternatively you can download OpenJDK .deb file and install without using repositories.
-
-REF: <a href="https://www.oracle.com/java/technologies/javase-jdk11-downloads.html" target="_blank">https://www.oracle.com/java/technologies/javase-jdk11-downloads.html</a>
-
-```bash
-sudo dpkg -i jdk-11.0.7_linux-x64_bin.deb
-```
-
 **Set Default JDK Version**
 
 Then, You need to set newly installed  Java version as your default Java version
@@ -135,9 +122,7 @@ sudo update-alternatives --config java
 java -version
 ```
 
-
 ### STEP 02: Install & Configure PostgreSQL Database for SonarQube
-
 
 
 In this tutorial I'm using PostgreSQL as my database engine. You also can use other compatible DB such as MySQL or Oracle.
@@ -160,11 +145,10 @@ sudo apt update
 Then, Install trusted GPG key on your system. And create a repository file for PostgreSQL.
 
 ```bash
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
-
 wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add -
-```
 
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+```
 
 
 **Install PostgreSQL** 
@@ -280,6 +264,12 @@ systemctl restart  postgresql
 systemctl status -l   postgresql
 ```
 
+Now Check wether PostgreSQL is listing on default port "5432"
+
+```bash
+netstat -tulpena | grep postgres
+```
+
 
 ### STEP 03: Download & Install SonarQube 
 
@@ -371,7 +361,7 @@ Un-comment these lines and modify them as necessary.
 
 ```bash
 sonar.jdbc.username=sonar
-sonar.jdbc.password=sonar
+sonar.jdbc.password=p@ssw0rd
 sonar.jdbc.url=jdbc:postgresql://localhost/sonarqube
 sonar.search.javaOpts=-Xmx512m -Xms512m -XX:+HeapDumpOnOutOfMemoryError
 ```
@@ -444,15 +434,6 @@ After sometime later, Check whether the port are listening
 netstat -tulpena  | grep 9000
 ```
 
-
-##### OPTIONAL : 
-
-Additionally you may required to modify some entries related to  elasticsearch and JVM options, Therefore SonarQube using elastciseach and JVM options.
-
-`/opt/sonarqube/elasticsearch/config/elasticsearch.yml`
-
-`/opt/sonarqube/elasticsearch/config/log4j2.properties`
-
 ### STEP 07: Configure NGINX Reverse Proxy For SonarQube
 
 **Install NGINX Package**
@@ -460,13 +441,28 @@ Additionally you may required to modify some entries related to  elasticsearch a
 Now we need to expose our SonarQube server into outside as it is listening only on localhost. Therefore we are creating a Nginx reverse proxy to redirect outside traffic into the SonarQube.  
 
 ```bash
-apt-get install nginx
+apt-get install nginx -y
 ```
+
+
+Goto **/etc/nginx/nginx.conf** and un-comment these two lines
+
+```bash
+vim /etc/nginx/nginx.conf
+```
+
+```bash
+include /etc/nginx/conf.d/*.conf;
+include /etc/nginx/sites-enabled/*;
+```
+
 
 
 **Create NGINX Configuration File For SonarQube**
 
-sudo vim /etc/nginx/sites-available/sonarqube
+Create a reverse proxy configuration file
+
+sudo vim /etc/nginx/sites-enabled/sonarqube.conf
 
 Copy and paste this vertual-host server block and change "server_name" entry as you required.
 
@@ -505,18 +501,14 @@ server{
 ```bash
 systemctl enable nginx.service 
 systemctl restart nginx.service
+systemctl status -l  nginx.service
 ```
 
+**Check whether port 80 listening for connections** 
 
-SonarQube stores their service logs under "/opt/sonarqube/logs" directory. You may need those log files in case of troubleshooting purpose.
-
-**Troubleshooting Tips : Log Paths**
-
-`/opt/sonarqube/logs/es.log` 
-
-`/opt/sonarqube/logs/sonar.log` 
-
-`/opt/sonarqube/logs/web.log` 
+```bash
+netstat -tulpena | grep 80
+```
 
 
 ### STEP 08: Firewall Configuration
@@ -545,6 +537,58 @@ Provide the default administrator account username and password as admin / admin
 
 <img src="\images\SonarQube-Ubuntu\1.png" width="100%">
 <img src="\images\SonarQube-Ubuntu\2.png" width="100%">
+
+
+##### Torubleshooting TIPS #####
+
+Sometime SonaqQube will not start as we expected. Most of the time the reason is related to elasticsearch service. SonarQube uses elasticsearch as it's indexing engine. So, We may need to  troubleshoot elasticsearch as well.
+
+Here are some troubleshooting tips:
+
+SonarQube stores their service logs under "/opt/sonarqube/logs" directory. You may need those log files in case of troubleshooting purpose.
+
+**Troubleshooting Tips : Log Paths**
+
+`/opt/sonarqube/logs/es.log` 
+
+`/opt/sonarqube/logs/sonar.log` 
+
+`/opt/sonarqube/logs/web.log` 
+
+**Troubleshooting Tips: JVM OPTION & HEAP MEMORY ISSUES**
+
+Additionally you may required to modify some entries related to  elasticsearch and JVM options, Therefore SonarQube using elastciseach and JVM options. The reason is our system's HEAP MEMORY will not be compatible with the JVM configurations.
+
+If your sonarqube service not starting or keep restarting, check following log file.
+
+tail  -f /opt/sonarqube/logs/es.log
+
+tail  -f /opt/sonarqube/logs/sonar.log
+
+tail  -f /opt/sonarqube/logs/access.log
+
+and check port number 9000 or 9001 listing on locahost.
+
+If not, your JVM.OPTION may not compatible with you physical RAM amount.Then,  You need to define matching JAVA HEAP Memory size for  you host machine.
+
+`vim /opt/sonarqube/elasticsearch/config/jvm.options `
+
+```bash
+# Xms represents the initial size of total heap space
+# Xmx represents the maximum size of total heap space
+
+-Xms1g
+-Xmx1g
+```
+
+You may need to adjust your HEAP MEMORY according to you physical usable memory size.
+
+`/opt/sonarqube/elasticsearch/config/elasticsearch.yml`
+
+
+`/opt/sonarqube/elasticsearch/config/log4j2.properties`
+
+
 
 **SonarQube initial configuration has been completed. 
 In the next tutorial, I will show you how to integrate and analyze your project code on SonarQube with Jenkins server and GitLab. And analysis of code deployments real-time.**
