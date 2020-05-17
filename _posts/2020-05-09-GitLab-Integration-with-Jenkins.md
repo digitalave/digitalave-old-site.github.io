@@ -12,7 +12,11 @@ comments: true
 
 **Before You Begin !**
 
-In this tutorial, I assume you have already configured a Jenkins server and having GitLab account with you. If you don't have a Jenkins server, Please refer this article to configure a Jenkins server.
+In this tutorial, I'm going to  demonstrate you, how to integrated GitLab with Jenkins Server. 
+I suppose, You've already installed Jenkins on your own. If you haven't Jenkins server, Please refer my previous video/article. I'll put the link in the description.
+
+REF: <a href="https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html" target="_blank">https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html</a>
+
 
 <a href="https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html" target="_blank">How To Install & Configure Jenkins</a> : <a href="https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html" target="_blank">https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html</a>
 
