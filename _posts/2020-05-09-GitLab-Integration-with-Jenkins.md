@@ -209,7 +209,33 @@ Add copied public key content into "Key" section.
 
 <img src="\images\GitLab_Jenkins\29.png" width="100%">
 
-<img src="\images\GitLab_Jenkins\30.png" width="100%">
+### STEP 07: Push Local Project To GitLab - Optional Step
+
+Now, I'm going to push my local project in to GitLab repository.
+
+IMG31
+
+Open Your Command Prompts / Or Use Your Own Method 
+
+```dos
+C:\Users\Dimuthu>git config --global user.name "Dimuthu Daundasekara"
+
+C:\Users\Dimuthu>git config --global user.email "dimuthu@gmail.com"
+
+C:\Users\Dimuthu>cd C:\YoutubeDownloader-master\YoutubeDownloader
+
+C:\YoutubeDownloader-master\YoutubeDownloader>git init
+
+C:\YoutubeDownloader-master\YoutubeDownloader>git remote add origin git@gitlab.com:dimuit86/youtubedownloader.git
+
+C:\YoutubeDownloader>git add .
+
+C:\YoutubeDownloader-master\YoutubeDownloader>git commit -m "Initial commit"
+
+C:\YoutubeDownloader>git config credential.helper store
+
+C:\YoutubeDownloader-master\YoutubeDownloader>git push https://gitlab.com/dimuit86/youtubedownloader.git
+```
 
 
 
